@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-playfair: "Playfair Display", Georgia, serif;
+    --font-inter: "Inter", system-ui, sans-serif;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #2563eb;
+    color: #fff;
+  }
+
+  /* Lenis */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply px-6 sm:px-8 lg:px-12 xl:px-16;
+  }
+  .container-shell {
+    @apply mx-auto w-full max-w-8xl container-px;
+  }
+
+  /* Editorial oversized heading */
+  .display {
+    @apply font-display font-bold leading-[0.92] tracking-tightest text-ink;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-accent;
+  }
+
+  .lead {
+    @apply text-ink-muted text-lg sm:text-xl leading-relaxed font-light;
+  }
+
+  /* Sketch / hand-drawn card border */
+  .sketch-border {
+    border: 1.5px solid #0a0a0b;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  }
+
+  .hairline {
+    @apply border border-paper-line;
+  }
+
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1.5px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .link-underline:hover {
+    background-size: 100% 1.5px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .ghost-type {
+    @apply font-display font-bold tracking-tightest text-ink/[0.035] select-none pointer-events-none;
+  }
+  .grain {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(10, 10, 11, 0.05) 1px,
+      transparent 0
+    );
+    background-size: 22px 22px;
+  }
+  .blueprint-grid {
+    background-image:
+      linear-gradient(to right, rgba(37, 99, 235, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
