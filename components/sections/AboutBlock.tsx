@@ -31,11 +31,11 @@ export default function AboutBlock() {
               eyebrow="Why StayClever"
               title={
                 <>
-                  AI partners who are{" "}
-                  <span className="italic text-accent">measured on your P&amp;L</span>
+                  AI partners measured on{" "}
+                  <span className="italic text-accent">your results</span>
                 </>
               }
-              intro="We're not here to sell you a model. We're an AI consulting and automation studio judged on one thing — the cost we remove, the hours we reclaim, and the growth you can see in the numbers."
+              intro="We're not here to sell you technology. We're an AI consulting and automation studio judged on one thing — the costs we cut, the hours we give back, and the growth you can see in the numbers."
             />
 
             {/* differentiators — the actual reasons to believe */}
@@ -77,7 +77,7 @@ export default function AboutBlock() {
               <Ecosystem className="h-auto w-full" />
               <div className="mt-4 flex items-center justify-center gap-2 text-sm text-ink-muted">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                One AI brain, your whole team working smarter
+                One smart system, your whole team working better
               </div>
             </div>
           </motion.div>

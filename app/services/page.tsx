@@ -4,13 +4,14 @@ import { site } from "@/lib/site";
 import PageHero from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import MagneticButton from "@/components/ui/MagneticButton";
+import FounderDay from "@/components/sections/FounderDay";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { Check, X, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "AI Services — Automation, Assistants, Forecasting & More",
   description:
-    "Eight focused AI capabilities — strategy, automation, agents, analytics, and more — each judged by the business numbers it moves.",
+    "Five practical ways to put AI to work in your business: automate manual work, answer customers 24/7, forecast demand, and build what's unique to you. Each judged by the results it delivers.",
 };
 
 export default function ServicesPage() {
@@ -19,8 +20,8 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         ghost="SOLVE"
-        titleLines={["AI solutions, built", "around outcomes"]}
-        intro="We don't lead with technology. We lead with the problem, then bring the smallest amount of AI that solves it — and prove the return."
+        titleLines={["AI solutions, built", "around your problems"]}
+        intro="We don't start with technology. We start with your problem, then add just enough AI to solve it — and show you the return."
       >
         <MagneticButton href={site.cta.primary.href} variant="primary">
           {site.cta.primary.label}
@@ -30,6 +31,7 @@ export default function ServicesPage() {
       {services.map((s, i) => {
         const Icon = s.icon;
         const flipped = i % 2 === 1;
+        const num = String(i + 1).padStart(2, "0");
         return (
           <section
             key={s.slug}
@@ -47,7 +49,7 @@ export default function ServicesPage() {
                           <Icon className="h-6 w-6" strokeWidth={1.7} />
                         </span>
                         <span className="font-display text-5xl font-bold text-ink/10">
-                          {s.index}
+                          {num}
                         </span>
                       </div>
                     </Reveal>
@@ -185,6 +187,9 @@ export default function ServicesPage() {
           </section>
         );
       })}
+
+      {/* Signature offer closes the page — the founder-led discovery day */}
+      <FounderDay />
 
       <FinalCTA />
     </>

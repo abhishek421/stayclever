@@ -9,9 +9,9 @@ import FinalCTA from "@/components/sections/FinalCTA";
 import { Check, ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Industries",
+  title: "Industries We Help — AI for D2C, Retail, FinTech & More",
   description:
-    "AI applications tailored to D2C, retail, FinTech, healthcare, SaaS, logistics, real estate, and professional services.",
+    "Practical AI built for your industry — D2C, retail, FinTech, healthcare, SaaS, logistics, real estate, and professional services. The right use case for your business, not a generic one.",
 };
 
 export default function IndustriesPage() {
@@ -20,8 +20,8 @@ export default function IndustriesPage() {
       <PageHero
         eyebrow="Industries"
         ghost="SECTORS"
-        titleLines={["AI that speaks", "your industry"]}
-        intro="The highest-leverage AI use case in one sector is often irrelevant in another. We bring domain judgment to every engagement."
+        titleLines={["AI that fits", "your industry"]}
+        intro="The best AI use case in retail is rarely the right one in healthcare. We bring real know-how to your industry — so you get the wins that actually matter for your business."
       >
         <MagneticButton href={site.cta.primary.href} variant="primary">
           {site.cta.primary.label}

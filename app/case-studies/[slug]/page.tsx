@@ -113,7 +113,7 @@ export default async function CaseStudyPage({
             <Reveal>
               <div className="rounded-4xl border border-paper-line bg-paper-warm p-8 text-center sm:p-12">
                 <p className="font-display text-2xl italic text-ink sm:text-3xl">
-                  Want results like {cs.client}&apos;s?
+                  Want results like these?
                 </p>
                 <div className="mt-7 flex flex-wrap justify-center gap-3">
                   <MagneticButton href={site.cta.primary.href} variant="primary">

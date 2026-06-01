@@ -42,7 +42,7 @@ export default function ContactForm() {
             </h3>
             <p className="mt-3 max-w-sm text-ink-muted">
               We&apos;ll review your details and reply within one business day to
-              schedule your free AI audit.
+              set up your free AI plan.
             </p>
           </motion.div>
         ) : (
@@ -55,7 +55,7 @@ export default function ContactForm() {
           >
             <div className="mb-6">
               <h2 className="font-display text-xl font-bold text-ink">
-                Book your free AI audit
+                Book your free AI plan
               </h2>
               <p className="mt-1 text-sm text-ink-muted">
                 A few details and a real human will be in touch.
@@ -97,7 +97,7 @@ export default function ContactForm() {
               <textarea
                 name="message"
                 required
-                placeholder="Tell us about the workflow, cost, or growth challenge on your mind…"
+                placeholder="Tell us about the task, cost, or growth challenge on your mind…"
                 className="min-h-[7rem] w-full flex-1 resize-none rounded-2xl border border-paper-line bg-paper-warm px-4 py-3 text-sm text-ink outline-none transition-all placeholder:text-ink-muted/70 focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10"
               />
             </label>
@@ -113,7 +113,7 @@ export default function ContactForm() {
                 </>
               ) : (
                 <>
-                  Get my AI audit
+                  Get my free AI plan
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </>
               )}

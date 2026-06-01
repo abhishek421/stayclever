@@ -18,11 +18,11 @@ export default function InsightsPreview() {
             eyebrow="Insights"
             title={
               <>
-                Sharp thinking on{" "}
-                <span className="italic text-accent">applied AI</span>
+                Practical AI ideas{" "}
+                <span className="italic text-accent">you can use</span>
               </>
             }
-            intro="No think-pieces about the future. Practical perspectives you can use in the next quarter."
+            intro="No think-pieces about the future. Just clear, practical ideas you can put to work this quarter."
           />
           <div className="hidden lg:block">
             <MagneticButton href="/insights" variant="secondary" showArrow>

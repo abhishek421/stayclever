@@ -6,16 +6,16 @@ import ContactForm from "@/components/sections/ContactForm";
 import { Mail, MapPin, Phone, Gauge, Check } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact — Get Your Free AI Plan",
   description:
-    "Start with a free AI audit. Tell us about your workflow, cost, or growth challenge and we'll map where AI creates real leverage.",
+    "Tell us about the task, cost, or growth challenge on your mind, and we'll send back a free AI plan — a clear, honest view of what's worth doing and what it's worth.",
 };
 
 const assessment = [
-  "Where AI creates measurable leverage in your stack",
-  "A prioritized shortlist of use cases by ROI",
-  "Data & tooling readiness, scored honestly",
-  "Risk, compliance, and build-vs-buy guidance",
+  "Where AI can save you the most time or money",
+  "A short, ranked list of ideas to start with",
+  "An honest read on whether your data is ready",
+  "Simple guidance on what to build vs. buy",
 ];
 
 export default function ContactPage() {
@@ -39,8 +39,8 @@ export default function ContactPage() {
           </h1>
           <Reveal delay={0.25}>
             <p className="lead mt-8 max-w-2xl">
-              Tell us about the workflow, cost, or growth challenge on your mind.
-              We&apos;ll come back with a free AI audit — and an honest view of what&apos;s
+              Tell us about the task, cost, or growth challenge on your mind.
+              We&apos;ll come back with a free AI plan — and an honest view of what&apos;s
               worth doing.
             </p>
           </Reveal>
@@ -61,11 +61,11 @@ export default function ContactPage() {
                   <Gauge className="h-5 w-5" strokeWidth={1.8} />
                 </span>
                 <h2 className="mt-6 font-display text-2xl font-bold">
-                  AI Readiness Assessment
+                  Your Free AI Plan
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-white/65">
-                  Every conversation starts with a free, no-obligation audit.
-                  You&apos;ll come away with:
+                  Every conversation starts with a free, no-pressure plan.
+                  You&apos;ll come away knowing:
                 </p>
                 <ul className="mt-6 space-y-3">
                   {assessment.map((a) => (
@@ -82,7 +82,7 @@ export default function ContactPage() {
                     48h
                   </span>
                   <span className="text-sm text-white/70">
-                    typical turnaround from first call to audit summary
+                    typical turnaround from first call to your AI plan
                   </span>
                 </div>
               </div>

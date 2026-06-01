@@ -100,7 +100,7 @@ export default function Process() {
         <Reveal delay={0.05}>
           <h2 className="display max-w-2xl text-4xl sm:text-5xl lg:text-[3.4rem]">
             A clear path from{" "}
-            <span className="italic text-accent">problem to scale</span>
+            <span className="italic text-accent">problem to results</span>
           </h2>
         </Reveal>
 

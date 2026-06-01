@@ -71,11 +71,11 @@ export default function Hero() {
               transition={{ duration: 0.7, ease }}
               className="display text-[3.4rem] leading-[0.9] sm:text-7xl lg:text-[5.4rem] xl:text-[6rem]"
             >
-              AI consulting
+              Practical AI that
               <br />
-              that actually
+              solves real
               <br />
-              <span className="text-accent">delivers results</span>
+              <span className="text-accent">business problems</span>
             </motion.h1>
 
             <motion.p
@@ -84,9 +84,9 @@ export default function Hero() {
               transition={{ duration: 0.7, ease, delay: 0.12 }}
               className="lead mt-7 max-w-xl"
             >
-              Helping startups, SMBs, and D2C brands automate, optimize, and
-              scale with practical AI — measured in revenue, cost, and time
-              saved. Not hype.
+              We help startups, small businesses, and D2C brands use AI to
+              automate everyday work, answer customers faster, and cut costs —
+              measured in real results, not buzzwords.
             </motion.p>
 
             <motion.div

@@ -1,14 +1,14 @@
 export const site = {
   name: "StayClever",
-  tagline: "AI Consulting & Automation That Drives Real Business Impact",
+  tagline: "Practical AI Consulting & Automation for Growing Businesses",
   description:
-    "StayClever helps startups, SMBs, and D2C brands leverage practical AI to automate workflows, improve efficiency, reduce costs, and scale operations.",
+    "StayClever helps startups, small businesses, and D2C brands use AI to automate everyday work, answer customers faster, cut costs, and grow — without the jargon. Start with a free AI plan.",
   url: "https://stayclever.ai",
   email: "hello@stayclever.ai",
   phone: "+1 (415) 555-0142",
   location: "San Francisco · Remote-first",
   cta: {
-    primary: { label: "Get AI Audit", href: "/contact" },
+    primary: { label: "Get a Free AI Plan", href: "/contact" },
     secondary: { label: "Let's Talk", href: "/contact" },
   },
   nav: [

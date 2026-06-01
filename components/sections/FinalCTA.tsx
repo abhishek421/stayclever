@@ -35,9 +35,9 @@ export default function FinalCTA() {
               </Reveal>
               <Reveal delay={0.12}>
                 <p className="lead mt-6 max-w-xl">
-                  Start with a free AI audit. We&apos;ll map where AI creates real
-                  leverage in your business — and show you the ROI before you
-                  commit to anything.
+                  Start with a free AI plan. We&apos;ll show you exactly where AI can
+                  save time or make money in your business — and what the return
+                  looks like — before you commit to anything.
                 </p>
               </Reveal>
               <Reveal delay={0.18}>

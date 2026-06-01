@@ -7,9 +7,9 @@ import FinalCTA from "@/components/sections/FinalCTA";
 import { ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Case Studies",
+  title: "Case Studies — Real AI Results in Numbers",
   description:
-    "Real results from real engagements — measured in repeat orders, fraud prevented, and patient response times.",
+    "See what practical AI delivered for real businesses: 45% more repeat orders, 70% less fraud, 80% faster customer replies. Measured results, not promises.",
 };
 
 export default function CaseStudiesPage() {
@@ -18,8 +18,8 @@ export default function CaseStudiesPage() {
       <PageHero
         eyebrow="Case studies"
         ghost="PROOF"
-        titleLines={["Outcomes we can", "put numbers to"]}
-        intro="Every engagement is judged on a business metric. Here's a sample of what that looks like in practice."
+        titleLines={["Results we can", "put numbers to"]}
+        intro="Every project is judged on a real business result. Here's a sample of what that looks like in practice."
       />
 
       <section className="bg-paper py-16 sm:py-20">

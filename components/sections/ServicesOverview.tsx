@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { services } from "@/lib/data";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { Stagger, StaggerItem } from "@/components/ui/Reveal";
 import MagneticButton from "@/components/ui/MagneticButton";
 import { ArrowUpRight } from "lucide-react";
 
 export default function ServicesOverview() {
+  // Duplicate the set so the -50% marquee loops seamlessly.
+  const loop = [...services, ...services];
+
   return (
     <section id="services" className="relative bg-paper py-24 sm:py-32">
       <div className="container-shell">
@@ -18,7 +20,7 @@ export default function ServicesOverview() {
                 <span className="italic text-accent">real business problems</span>
               </>
             }
-            intro="Eight focused capabilities. Each one is judged by a single question: does it move a number that matters to your business?"
+            intro="Five focused ways we put AI to work. Each one is judged by a single question: does it move a number that matters to your business?"
           />
           <div className="hidden lg:block">
             <MagneticButton href="/services" variant="secondary" showArrow>
@@ -26,21 +28,30 @@ export default function ServicesOverview() {
             </MagneticButton>
           </div>
         </div>
+      </div>
 
-        <Stagger className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s) => {
+      {/* Auto-scrolling carousel — drifts left→right, pauses on hover.
+          Full-bleed with a soft edge fade. Honors reduced-motion. */}
+      <div className="group relative mt-16 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+        <div className="flex w-max animate-marquee gap-5 px-6 [animation-duration:55s] group-hover:[animation-play-state:paused] motion-reduce:animate-none">
+          {loop.map((s, i) => {
             const Icon = s.icon;
             return (
-              <StaggerItem key={s.slug}>
+              <div
+                key={`${s.slug}-${i}`}
+                className="w-[300px] shrink-0 sm:w-[340px] lg:w-[360px]"
+                aria-hidden={i >= services.length}
+              >
                 <Link
                   href={`/services#${s.slug}`}
                   aria-label={`${s.title} — ${s.proof}`}
-                  className="group block h-full rounded-3xl outline-none"
+                  tabIndex={i >= services.length ? -1 : undefined}
+                  className="group/card block h-full rounded-3xl outline-none"
                 >
-                  <div className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-paper-line bg-white p-6 shadow-card transition-all duration-500 ease-out-expo group-hover:-translate-y-1.5 group-hover:shadow-card-hover group-focus-visible:-translate-y-1.5 group-focus-visible:shadow-card-hover group-focus-visible:ring-2 group-focus-visible:ring-accent group-focus-visible:ring-offset-2">
+                  <div className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-paper-line bg-white p-6 shadow-card transition-all duration-500 ease-out-expo group-hover/card:-translate-y-1.5 group-hover/card:shadow-card-hover group-focus-visible/card:-translate-y-1.5 group-focus-visible/card:shadow-card-hover group-focus-visible/card:ring-2 group-focus-visible/card:ring-accent group-focus-visible/card:ring-offset-2">
                     {/* top row: icon + index kicker */}
                     <div className="flex items-start justify-between">
-                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-wash text-accent transition-colors duration-500 group-hover:bg-ink group-hover:text-white group-focus-visible:bg-ink group-focus-visible:text-white">
+                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-wash text-accent transition-colors duration-500 group-hover/card:bg-ink group-hover/card:text-white group-focus-visible/card:bg-ink group-focus-visible/card:text-white">
                         <Icon className="h-5 w-5" strokeWidth={1.8} />
                       </span>
                       <span className="font-display text-2xl font-bold leading-none text-ink/15">
@@ -64,23 +75,23 @@ export default function ServicesOverview() {
                         <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                         {s.proof}
                       </span>
-                      <ArrowUpRight className="h-4 w-4 text-ink-muted transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent group-focus-visible:text-accent" />
+                      <ArrowUpRight className="h-4 w-4 text-ink-muted transition-all duration-300 group-hover/card:-translate-y-0.5 group-hover/card:translate-x-0.5 group-hover/card:text-accent group-focus-visible/card:text-accent" />
                     </div>
 
                     {/* hover/focus accent line */}
-                    <span className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-accent transition-transform duration-500 ease-out-expo group-hover:scale-x-100 group-focus-visible:scale-x-100" />
+                    <span className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-accent transition-transform duration-500 ease-out-expo group-hover/card:scale-x-100 group-focus-visible/card:scale-x-100" />
                   </div>
                 </Link>
-              </StaggerItem>
+              </div>
             );
           })}
-        </Stagger>
-
-        <div className="mt-10 lg:hidden">
-          <MagneticButton href="/services" variant="secondary" showArrow>
-            All services
-          </MagneticButton>
         </div>
+      </div>
+
+      <div className="container-shell mt-10 lg:hidden">
+        <MagneticButton href="/services" variant="secondary" showArrow>
+          All services
+        </MagneticButton>
       </div>
     </section>
   );

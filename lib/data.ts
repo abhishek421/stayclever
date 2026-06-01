@@ -4,9 +4,6 @@ import {
   Bot,
   LineChart,
   Boxes,
-  Plug,
-  Cpu,
-  AudioLines,
   type LucideIcon,
 } from "lucide-react";
 
@@ -32,83 +29,83 @@ export const services: Service[] = [
   {
     slug: "ai-strategy-consulting",
     index: "01",
-    title: "AI Strategy & Consulting",
+    title: "AI Strategy & Planning",
     icon: Brain,
-    tagline: "A pragmatic roadmap, not a science project.",
-    proof: "Roadmap in 2–3 weeks",
+    tagline: "Know exactly where AI will pay off — before you spend a dollar.",
+    proof: "Clear plan in 2–3 weeks",
     description:
-      "We map your operations, find where AI creates measurable leverage, and build a prioritized roadmap tied to ROI.",
+      "The deeper, company-wide version of our discovery. Over 2–3 weeks we map how your whole business runs, score where AI pays off, and build a prioritized 12-month plan with the expected return for each move. (Want a faster, single-day start? See A Day With the Founder.)",
     problem:
-      "Most teams know AI matters but can't tell which use cases are real, fundable, and safe to ship.",
+      "You know AI could help, but there's too much noise. It's hard to tell what's real, what's worth the money, and where to even start.",
     solution:
-      "A structured audit of workflows, data readiness, and risk — turned into a sequenced roadmap with business cases for each initiative.",
+      "We review your day-to-day work and the data you already have, then hand you a short, prioritized plan — what to do first, what it will cost, and what you'll get back.",
     benefits: [
-      "Clear ROI model per initiative",
-      "Data-readiness & risk assessment",
-      "Build vs. buy decisions made for you",
-      "Executive-ready roadmap in 2–3 weeks",
+      "A clear return estimate for each idea",
+      "An honest read on whether your data is ready",
+      "We tell you what to build vs. what to buy",
+      "A plan your whole team can follow — in 2–3 weeks",
     ],
     useCases: [
-      "AI opportunity audit",
-      "Data & tooling readiness review",
-      "Governance & compliance framework",
-      "12-month adoption roadmap",
+      "Find your best AI opportunities",
+      "Check if your data and tools are ready",
+      "Set simple rules for safe, responsible AI",
+      "Get a 12-month plan you can act on",
     ],
-    process: ["Discover operations", "Score opportunities", "Model ROI", "Sequence roadmap"],
+    process: ["Learn how you work", "Spot the best opportunities", "Estimate the return", "Hand you the plan"],
   },
   {
     slug: "workflow-automation",
     index: "02",
-    title: "Workflow Automation",
+    title: "Workflow Automation & AI Agents",
     icon: Workflow,
-    tagline: "Remove the busywork that drains your team.",
-    proof: "10x faster cycle times",
+    tagline: "Take the busywork off your team — and let software finish whole jobs.",
+    proof: "Tasks done 10x faster",
     description:
-      "We automate repetitive, multi-step processes across your stack so people focus on judgment, not data entry.",
+      "We automate the repetitive, predictable tasks that eat your team's day — and for the work that needs judgment, we build AI agents that complete whole multi-step jobs end to end. Everything connects to the tools you already use, so there's no rip-and-replace.",
     problem:
-      "Manual handoffs across tools create delays, errors, and burnout — and they don't scale with headcount.",
+      "Your team wastes hours on manual handoffs, approvals, and data entry across disconnected tools — and it only gets worse as you grow.",
     solution:
-      "End-to-end automations that connect your apps, route data intelligently, and keep humans in the loop where it matters.",
+      "We connect your apps and automate the predictable steps, then add AI agents for the tasks that need decisions — with people in control where it matters.",
     benefits: [
-      "10x faster cycle times",
-      "Fewer manual errors",
-      "Scales without new hires",
-      "Full audit trail & observability",
+      "Tasks finished in seconds, not hours",
+      "Whole jobs completed, not just started",
+      "Works with the tools you already use",
+      "Handle more work without hiring",
     ],
     useCases: [
-      "Lead routing & enrichment",
-      "Invoice & document processing",
-      "Onboarding & approvals",
-      "Reporting & reconciliation",
+      "Sorting and routing leads",
+      "Invoice and document processing",
+      "Onboarding and approvals",
+      "Research, follow-up, and data cleanup",
     ],
-    process: ["Map the workflow", "Identify the bottleneck", "Automate & test", "Monitor & refine"],
+    process: ["Map the work", "Automate the predictable steps", "Add agents where judgment's needed", "Watch and improve"],
   },
   {
     slug: "ai-chatbots-assistants",
     index: "03",
-    title: "AI Chatbots & Assistants",
+    title: "AI Chat & Voice Assistants",
     icon: Bot,
-    tagline: "Support that answers in seconds, on brand.",
-    proof: "80% faster first response",
+    tagline: "Answer every customer in seconds — by chat or by phone, day or night.",
+    proof: "80% faster replies",
     description:
-      "Conversational assistants grounded in your knowledge base that resolve issues, qualify leads, and book meetings.",
+      "Friendly assistants trained on your business that answer questions, capture leads, and book meetings — over chat or over the phone, around the clock. Calls and messages never go unanswered.",
     problem:
-      "Customers wait too long for answers and your team repeats the same responses hundreds of times a week.",
+      "Customers hate waiting, your team repeats the same answers hundreds of times a week, and after-hours calls and messages slip away.",
     solution:
-      "Retrieval-grounded assistants trained on your docs, connected to your systems, with safe escalation to humans.",
+      "We build assistants that know your business, answer in your tone over chat and voice, and hand tricky cases to a real person when needed.",
     benefits: [
-      "80% faster first response",
-      "24/7 multilingual coverage",
-      "Higher CSAT & deflection",
-      "Seamless human handoff",
+      "80% faster first reply",
+      "Never miss a call or message — 24/7",
+      "Happier customers, fewer tickets",
+      "Smooth handover to your team",
     ],
     useCases: [
-      "Customer support deflection",
-      "Sales qualification",
-      "Internal knowledge assistant",
-      "Booking & scheduling",
+      "Answer common customer questions",
+      "Qualify and capture new leads",
+      "Handle inbound support calls",
+      "Book meetings and appointments",
     ],
-    process: ["Ingest knowledge", "Ground & guardrail", "Integrate channels", "Tune from feedback"],
+    process: ["Learn your business", "Set the guardrails", "Add chat and voice channels", "Improve from real conversations"],
   },
   {
     slug: "predictive-analytics",
@@ -116,134 +113,130 @@ export const services: Service[] = [
     title: "Predictive Analytics",
     icon: LineChart,
     tagline: "See what's coming before it costs you.",
-    proof: "Earlier churn & fraud signals",
+    proof: "Spot churn & fraud early",
     description:
-      "Forecasting and scoring models that turn your historical data into decisions about demand, churn, and risk.",
+      "We turn the data you already have into clear forecasts — what customers will do, what you'll sell, and what to watch out for — so you can plan ahead.",
     problem:
-      "Decisions get made on gut feel because the signal is buried in spreadsheets nobody can act on in time.",
+      "Big decisions get made on gut feel because the useful information is buried in spreadsheets nobody has time to dig through.",
     solution:
-      "Production models for forecasting, segmentation, and anomaly detection, surfaced inside the tools you already use.",
+      "We build simple forecasts and alerts for things like demand, customer loss, and unusual activity — and put them right inside the tools you already use.",
     benefits: [
-      "Forecast accuracy gains",
-      "Earlier churn & fraud signals",
-      "Smarter inventory & spend",
-      "Decisions in dashboards, not decks",
+      "More accurate forecasts",
+      "Early warning on customers about to leave",
+      "Smarter stock and spending",
+      "Answers in your dashboard, not a slide deck",
     ],
     useCases: [
-      "Demand & revenue forecasting",
-      "Churn & LTV scoring",
-      "Fraud & anomaly detection",
-      "Dynamic pricing inputs",
+      "Forecast sales and demand",
+      "Predict which customers may leave",
+      "Catch fraud and unusual activity",
+      "Make smarter pricing decisions",
     ],
-    process: ["Audit data", "Engineer features", "Train & validate", "Deploy to decisions"],
+    process: ["Check your data", "Find the signals", "Build and test", "Put it to work"],
   },
   {
     slug: "custom-ai-solutions",
     index: "05",
     title: "Custom AI Solutions",
     icon: Boxes,
-    tagline: "When off-the-shelf won't cut it.",
-    proof: "You own the IP",
+    tagline: "When off-the-shelf tools just don't fit.",
+    proof: "You own it — fully",
     description:
-      "Bespoke AI products built around your data and your edge — from document intelligence to recommendation engines.",
+      "Some problems are unique to your business. We design and build AI made just for you — around your data and the way you actually work.",
     problem:
-      "Your hardest problems are specific to you, and generic SaaS tools flatten the advantage you actually have.",
+      "Your hardest challenges are specific to you. Generic software forces you to work its way and throws away the edge that makes you different.",
     solution:
-      "We design, build, and ship production-grade AI features with evaluation, monitoring, and a clear handover.",
+      "We build AI that fits your business exactly — tested, reliable, and handed over so it's truly yours.",
     benefits: [
-      "Owns your competitive edge",
-      "Built on your proprietary data",
-      "Production-grade & monitored",
-      "You own the IP",
+      "Built around what makes you different",
+      "Uses your own data",
+      "Reliable and looked after",
+      "You own it completely",
     ],
     useCases: [
-      "Document intelligence",
-      "Recommendation engines",
-      "Search & RAG systems",
-      "Internal AI tooling",
+      "A tool built around your unique process",
+      "Smart search across your own content",
+      "A model trained on your proprietary data",
+      "Something no off-the-shelf product offers",
     ],
-    process: ["Scope & spec", "Prototype", "Productionize", "Handover & support"],
+    process: ["Agree the goal", "Build a working version", "Get it production-ready", "Hand it over with support"],
+  },
+];
+
+/* ----------------------------------------------------------------
+   SIGNATURE OFFER — "A Day With the Founder"
+   The flagship, founder-led discovery day. Sits between the free AI
+   Plan and a full build engagement — the main conversion bridge.
+----------------------------------------------------------------- */
+export const founderDay = {
+  eyebrow: "Signature offer",
+  name: "A Day With the Founder",
+  tagline: "One day. Your whole business. A clear plan for what AI should do first.",
+  intro:
+    "Our founder spends a full day inside your business — watching how work actually happens, sitting with your team, and spotting the tasks quietly eating your time and money. You finish the day knowing exactly what to automate first, and what it's worth.",
+  steps: [
+    {
+      time: "Morning",
+      title: "Walk the business",
+      description: "We shadow how work really flows — where things get handed off, stuck, or re-typed.",
+    },
+    {
+      time: "Midday",
+      title: "Find the leaks",
+      description: "We pinpoint the repetitive tasks, slow bottlenecks, and missed opportunities costing you the most.",
+    },
+    {
+      time: "Afternoon",
+      title: "Match problems to AI",
+      description: "Every problem gets matched to a solution and ranked by value versus effort.",
+    },
+    {
+      time: "End of day",
+      title: "Live readout",
+      description: "You see the shortlist and the quick wins before we leave — no waiting, no mystery.",
+    },
+  ],
+  deliverable: {
+    title: "Your AI Action Plan",
+    turnaround: "48h",
+    description:
+      "Within 48 hours you get a written plan: your best AI opportunities, the one or two quick wins to start now, rough return on each, and exactly what to build first.",
+  },
+  highlights: [
+    "A full day with the founder — not an account manager",
+    "On-site, or a full day virtual — your call",
+    "A clear, ranked plan you own and can act on",
+    "Fixed fee, credited back in full if we build together within 30 days",
+  ],
+  pricing: "Fixed fee — credited 100% toward any project you start within 30 days. No risk if we end up working together.",
+};
+
+/* ----------------------------------------------------------------
+   DISCOVERY LADDER — three ways to start, from light to deep, so the
+   free AI Plan, the founder day, and the strategy engagement read as
+   rungs on one ladder instead of competing offers.
+----------------------------------------------------------------- */
+export const discoveryLadder = [
+  {
+    step: "Start free",
+    title: "Free AI Plan",
+    description: "A quick, remote look at a few high-value ideas. No cost, no commitment.",
+    href: "/contact",
+    featured: false,
   },
   {
-    slug: "ai-integrations",
-    index: "06",
-    title: "AI Integrations",
-    icon: Plug,
-    tagline: "Plug intelligence into the stack you have.",
-    proof: "No rip-and-replace",
-    description:
-      "We embed AI into your CRM, ERP, helpdesk, and internal tools so capability shows up where work happens.",
-    problem:
-      "AI lives in a separate tab nobody opens — disconnected from the systems that run the business.",
-    solution:
-      "Native integrations and middleware that bring models, agents, and automations into your existing platforms.",
-    benefits: [
-      "No rip-and-replace",
-      "Adoption inside existing tools",
-      "Secure, governed access",
-      "Vendor-agnostic architecture",
-    ],
-    useCases: [
-      "CRM & sales enablement",
-      "Helpdesk copilots",
-      "ERP & ops automation",
-      "Data warehouse activation",
-    ],
-    process: ["Audit the stack", "Design the bridge", "Integrate securely", "Validate & roll out"],
+    step: "Go deeper",
+    title: "A Day With the Founder",
+    description: "One paid, founder-led day — on-site or virtual. You leave with a full action plan.",
+    href: "#day-with-founder",
+    featured: true,
   },
   {
-    slug: "ai-agents",
-    index: "07",
-    title: "AI Agents",
-    icon: Cpu,
-    tagline: "Software that does the work, not just suggests it.",
-    proof: "End-to-end task completion",
-    description:
-      "Autonomous and semi-autonomous agents that complete multi-step tasks end-to-end with the right guardrails.",
-    problem:
-      "Copilots that only suggest still leave the whole job on your team's plate.",
-    solution:
-      "Goal-driven agents with tool access, memory, and human checkpoints that actually finish the task safely.",
-    benefits: [
-      "End-to-end task completion",
-      "Human-in-the-loop safety",
-      "Operates across your tools",
-      "Auditable agent actions",
-    ],
-    useCases: [
-      "Research & enrichment agents",
-      "Ops & back-office agents",
-      "Sales & outbound agents",
-      "Data cleanup & migration",
-    ],
-    process: ["Define the goal", "Grant tools & limits", "Test in sandbox", "Deploy with oversight"],
-  },
-  {
-    slug: "voice-ai-solutions",
-    index: "08",
-    title: "Voice AI Solutions",
-    icon: AudioLines,
-    tagline: "Natural voice that handles real conversations.",
-    proof: "24/7 call coverage",
-    description:
-      "Voice agents for inbound and outbound calls that book, qualify, and resolve — with human warmth and zero hold music.",
-    problem:
-      "Phone lines are expensive, inconsistent, and impossible to staff around the clock.",
-    solution:
-      "Low-latency voice agents connected to your systems, with natural turn-taking and graceful human escalation.",
-    benefits: [
-      "24/7 call coverage",
-      "Lower cost per call",
-      "Consistent, on-brand service",
-      "Live transfer when needed",
-    ],
-    useCases: [
-      "Inbound support lines",
-      "Appointment booking",
-      "Outbound qualification",
-      "Order & status updates",
-    ],
-    process: ["Design the script", "Connect systems", "Tune latency & tone", "Launch & measure"],
+    step: "Scale up",
+    title: "AI Strategy & Planning",
+    description: "A multi-week, company-wide roadmap for larger or org-wide rollouts.",
+    href: "#ai-strategy-consulting",
+    featured: false,
   },
 ];
 
@@ -265,12 +258,12 @@ export const industries: Industry[] = [
   {
     slug: "d2c",
     name: "D2C",
-    blurb: "Turn first-time buyers into repeat revenue with AI across the funnel.",
+    blurb: "Turn one-time buyers into repeat customers with AI across your store.",
     applications: [
-      { title: "Personalized recommendations", detail: "Surface the right product on-site and in email to lift AOV and repeat rate." },
-      { title: "Support automation", detail: "Resolve order, shipping, and returns questions instantly, escalating edge cases." },
-      { title: "Retention forecasting", detail: "Predict churn and LTV so retention spend goes where it actually pays back." },
-      { title: "Creative testing", detail: "Generate and rank ad and email variants to find winning creative faster." },
+      { title: "Personalized recommendations", detail: "Show each shopper the products they're most likely to buy — on your site and in email." },
+      { title: "Support automation", detail: "Answer order, shipping, and returns questions instantly, day or night." },
+      { title: "Retention forecasting", detail: "Spot customers about to drift away so you can win them back in time." },
+      { title: "Creative testing", detail: "Create and test ad and email ideas faster to find what actually sells." },
     ],
     outcome: "45% increase in repeat orders",
     caseStudySlug: "d2c-orders-lift",
@@ -278,24 +271,24 @@ export const industries: Industry[] = [
   {
     slug: "retail",
     name: "Retail",
-    blurb: "Forecast demand, optimize inventory, and unify the customer experience.",
+    blurb: "Keep the right stock on shelves and give every shopper a better experience.",
     applications: [
-      { title: "Demand forecasting", detail: "Forecast SKU-level demand to cut both stockouts and overstock." },
-      { title: "Inventory optimization", detail: "Rebalance stock across stores and warehouses automatically." },
+      { title: "Demand forecasting", detail: "Predict what will sell so you avoid both empty shelves and dead stock." },
+      { title: "Inventory optimization", detail: "Move stock to where it's needed across stores and warehouses, automatically." },
       { title: "In-store assistants", detail: "Give staff and shoppers instant answers on stock, specs, and alternatives." },
-      { title: "Dynamic pricing inputs", detail: "Feed demand and competitor signals into smarter pricing decisions." },
+      { title: "Smarter pricing", detail: "Use demand and competitor signals to set better prices." },
     ],
     outcome: "30% lower stockouts",
   },
   {
     slug: "fintech",
     name: "FinTech",
-    blurb: "Detect risk in real time and automate compliance-heavy workflows.",
+    blurb: "Catch risk in real time and take the grind out of compliance work.",
     applications: [
-      { title: "Fraud detection", detail: "Score transactions in real time to block fraud without adding checkout friction." },
-      { title: "KYC automation", detail: "Verify identity and documents in seconds, flagging only genuine exceptions." },
-      { title: "Credit scoring", detail: "Augment underwriting with models that read more signal than rules can." },
-      { title: "Support copilots", detail: "Draft accurate, compliant responses for agents to review and send." },
+      { title: "Fraud detection", detail: "Spot risky transactions instantly — without slowing down honest customers." },
+      { title: "KYC automation", detail: "Verify customers and documents in seconds, flagging only the real exceptions." },
+      { title: "Credit scoring", detail: "Make fairer, faster lending decisions using more than just rigid rules." },
+      { title: "Support copilots", detail: "Help your team reply accurately and stay compliant." },
     ],
     outcome: "70% reduction in fraud losses",
     caseStudySlug: "fintech-fraud-reduction",
@@ -303,12 +296,12 @@ export const industries: Industry[] = [
   {
     slug: "healthcare",
     name: "Healthcare",
-    blurb: "Reduce admin load and speed up patient support, safely and compliantly.",
+    blurb: "Cut the paperwork and answer patients faster — safely and within the rules.",
     applications: [
-      { title: "Intake automation", detail: "Capture and structure patient information before the first interaction." },
-      { title: "Patient support agents", detail: "Answer common questions and route urgent ones, with clinician oversight." },
+      { title: "Intake automation", detail: "Collect and organize patient details before the first visit." },
+      { title: "Patient support agents", detail: "Answer common questions and pass urgent ones to staff, with clinician oversight." },
       { title: "Documentation assist", detail: "Draft notes and summaries so clinicians spend less time typing." },
-      { title: "Triage routing", detail: "Prioritize and route cases to the right team automatically." },
+      { title: "Triage routing", detail: "Send each case to the right team automatically." },
     ],
     outcome: "80% faster patient response",
     caseStudySlug: "healthcare-support-speed",
@@ -316,35 +309,35 @@ export const industries: Industry[] = [
   {
     slug: "saas",
     name: "SaaS",
-    blurb: "Embed AI features, deflect support, and reduce churn with usage signals.",
+    blurb: "Help users succeed, cut support tickets, and keep customers longer.",
     applications: [
-      { title: "In-product copilots", detail: "Embed assistants that help users get value without opening a ticket." },
-      { title: "Churn prediction", detail: "Spot at-risk accounts from usage signals before they cancel." },
-      { title: "Support deflection", detail: "Resolve common issues in-app and cut ticket volume." },
-      { title: "Onboarding automation", detail: "Guide new users to activation with contextual, automated nudges." },
+      { title: "In-product copilots", detail: "Help users get value inside your product without opening a ticket." },
+      { title: "Churn prediction", detail: "Spot accounts at risk of leaving before they cancel." },
+      { title: "Support deflection", detail: "Answer common questions in-app and reduce ticket volume." },
+      { title: "Onboarding automation", detail: "Guide new users to their first win automatically." },
     ],
     outcome: "2x activation rate",
   },
   {
     slug: "logistics",
     name: "Logistics",
-    blurb: "Optimize routes, predict delays, and automate exception handling.",
+    blurb: "Plan smarter routes, predict delays, and handle problems before they grow.",
     applications: [
       { title: "Route optimization", detail: "Plan routes that cut miles, fuel, and delivery time." },
-      { title: "ETA prediction", detail: "Give customers accurate arrival windows and flag delays early." },
-      { title: "Exception automation", detail: "Detect and resolve shipment exceptions before they escalate." },
-      { title: "Document processing", detail: "Extract data from bills of lading, customs forms, and invoices automatically." },
+      { title: "ETA prediction", detail: "Give customers accurate arrival times and flag delays early." },
+      { title: "Exception automation", detail: "Catch and fix shipment problems before they escalate." },
+      { title: "Document processing", detail: "Pull data from shipping and customs paperwork automatically." },
     ],
     outcome: "25% lower delivery costs",
   },
   {
     slug: "real-estate",
     name: "Real Estate",
-    blurb: "Qualify leads around the clock and automate document-heavy deals.",
+    blurb: "Answer and qualify leads around the clock and speed up paperwork-heavy deals.",
     applications: [
-      { title: "Lead qualification agents", detail: "Qualify and book inbound leads around the clock." },
-      { title: "Document automation", detail: "Generate and review contracts and disclosures in minutes." },
-      { title: "Valuation models", detail: "Estimate value and rent from comparables and market signals." },
+      { title: "Lead qualification agents", detail: "Answer and qualify new leads any time, and book viewings." },
+      { title: "Document automation", detail: "Draft and review contracts and disclosures in minutes." },
+      { title: "Valuation models", detail: "Estimate value and rent from comparable properties and market data." },
       { title: "Tenant support", detail: "Handle maintenance and leasing questions instantly." },
     ],
     outcome: "3x qualified leads",
@@ -352,12 +345,12 @@ export const industries: Industry[] = [
   {
     slug: "professional-services",
     name: "Professional Services",
-    blurb: "Automate research, drafting, and back-office work to bill more hours.",
+    blurb: "Automate research, drafting, and admin so you bill more of the hours you work.",
     applications: [
-      { title: "Research agents", detail: "Gather and synthesize sources so billable hours go to judgment." },
+      { title: "Research agents", detail: "Gather and summarize information so your time goes to the thinking." },
       { title: "Drafting assistants", detail: "Produce first drafts of memos, proposals, and reports." },
-      { title: "Knowledge search", detail: "Answer questions across your firm's documents and precedent." },
-      { title: "Billing automation", detail: "Capture time and assemble invoices with less leakage." },
+      { title: "Knowledge search", detail: "Find answers across your firm's documents in seconds." },
+      { title: "Billing automation", detail: "Capture time and build invoices with less lost revenue." },
     ],
     outcome: "20+ hours saved per week",
   },
@@ -383,57 +376,57 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     slug: "d2c-orders-lift",
-    client: "Lumen Goods",
+    client: "D2C skincare brand",
     industry: "D2C",
-    headline: "45% increase in repeat orders for a fast-growing D2C brand",
+    headline: "45% more repeat orders for a fast-growing D2C brand",
     summary:
-      "We deployed personalized recommendations and a support assistant that turned one-time buyers into loyal customers.",
+      "We added personalized product recommendations and an instant support assistant — and turned one-time buyers into loyal, repeat customers.",
     metric: { value: "45%", label: "Repeat orders", direction: "up" },
     kpis: [
       { value: "+45%", label: "Repeat orders" },
       { value: "-38%", label: "Support tickets" },
       { value: "6 wks", label: "Time to launch" },
-      { value: "4.7x", label: "ROI in year one" },
+      { value: "4.7x", label: "Return in year one" },
     ],
     challenge:
-      "Strong acquisition but weak retention — buyers churned after a single purchase and support couldn't keep up with growth.",
+      "The brand was great at winning new customers, but most never came back — and the support team couldn't keep up with the growth.",
     approach:
-      "We audited the post-purchase journey, identified drop-off points, and prioritized recommendations plus support automation.",
+      "We looked at what happened after each purchase, found where customers dropped off, and focused on two fixes: better recommendations and instant support.",
     implementation:
-      "A recommendation engine on product and email surfaces, paired with a knowledge-grounded support assistant connected to the helpdesk and order system.",
+      "Personalized recommendations on the website and in email, plus a support assistant connected to their help desk and order system.",
     results:
-      "Repeat orders rose 45% within two quarters while support tickets fell 38%, paying back the engagement 4.7x in year one.",
+      "Repeat orders rose 45% in two quarters, support tickets fell 38%, and the project paid for itself nearly five times over in the first year.",
   },
   {
     slug: "fintech-fraud-reduction",
-    client: "Northwind Pay",
+    client: "US fintech startup",
     industry: "FinTech",
-    headline: "70% reduction in fraud losses with real-time scoring",
+    headline: "70% fewer fraud losses with real-time checks",
     summary:
-      "A predictive scoring model flags risky transactions in milliseconds, cutting losses without adding friction.",
+      "A real-time scoring system flags risky transactions in milliseconds — cutting fraud without slowing down honest customers.",
     metric: { value: "70%", label: "Fraud losses", direction: "down" },
     kpis: [
       { value: "-70%", label: "Fraud losses" },
-      { value: "<80ms", label: "Decision latency" },
-      { value: "-22%", label: "False positives" },
+      { value: "<80ms", label: "Decision speed" },
+      { value: "-22%", label: "False alarms" },
       { value: "24/7", label: "Coverage" },
     ],
     challenge:
-      "Rule-based fraud checks were both too slow and too blunt — letting fraud through while blocking legitimate customers.",
+      "Their old rule-based checks were both too slow and too blunt — letting fraud through while blocking real customers.",
     approach:
-      "We engineered features from transaction history and built a real-time scoring pipeline with continuous evaluation.",
+      "We studied their transaction history to find the patterns that signal fraud, then built a system that scores every transaction instantly.",
     implementation:
-      "A model served behind a low-latency API integrated into the payment flow, with a review queue and feedback loop for analysts.",
+      "A real-time scoring check built into the payment flow, with a review queue and feedback loop so the team keeps it sharp.",
     results:
-      "Fraud losses dropped 70% while false positives fell 22%, all within an 80ms decision budget that kept checkout smooth.",
+      "Fraud losses dropped 70% and false alarms fell 22% — all while keeping checkout fast and smooth.",
   },
   {
     slug: "healthcare-support-speed",
-    client: "Carewell Clinics",
+    client: "Multi-clinic healthcare network",
     industry: "Healthcare",
-    headline: "80% faster patient support across a multi-clinic network",
+    headline: "80% faster patient replies across a multi-clinic network",
     summary:
-      "An intake and support assistant routes patients instantly and drafts responses for staff to approve.",
+      "An intake and support assistant routes patients instantly and drafts replies for staff to approve.",
     metric: { value: "80%", label: "Faster response", direction: "up" },
     kpis: [
       { value: "80%", label: "Faster response" },
@@ -442,13 +435,13 @@ export const caseStudies: CaseStudy[] = [
       { value: "HIPAA", label: "Compliant" },
     ],
     challenge:
-      "Front-desk teams were overwhelmed, patients waited days for replies, and clinicians lost time to documentation.",
+      "Front-desk teams were swamped, patients waited days for answers, and clinicians lost time to paperwork.",
     approach:
-      "We mapped intake and support flows, then designed a compliant assistant with human approval at every patient-facing step.",
+      "We mapped how patients get help, then designed an assistant with staff approving every message that reaches a patient.",
     implementation:
-      "A triage and drafting assistant integrated with the scheduling system, with strict guardrails and full audit logging.",
+      "A triage and drafting assistant connected to their scheduling system, with strict safety rules and full record-keeping.",
     results:
-      "Patient response times improved 80% and administrative time dropped 55%, freeing staff to focus on care.",
+      "Patient replies came 80% faster and admin time dropped 55%, giving staff more time for actual care.",
   },
 ];
 
@@ -465,9 +458,9 @@ export type Stat = {
 
 export const stats: Stat[] = [
   { value: 50, suffix: "+", label: "Projects delivered" },
-  { value: 10, suffix: "x", note: "up to", label: "Operational efficiency" },
-  { display: "24/7", label: "Automated workflows" },
-  { value: 99, suffix: "%", label: "Process reliability" },
+  { value: 10, suffix: "x", note: "up to", label: "Faster everyday tasks" },
+  { display: "24/7", label: "Always-on automation" },
+  { value: 99, suffix: "%", label: "Reliable and consistent" },
 ];
 
 /* ----------------------------------------------------------------
@@ -478,25 +471,25 @@ export const processSteps = [
     no: "01",
     title: "Discover",
     description:
-      "We learn your operations, data, and goals — then pinpoint where AI creates real, measurable leverage.",
+      "We get to know your business, your data, and your goals — and find where AI will save the most time or money.",
   },
   {
     no: "02",
-    title: "Strategize",
+    title: "Plan",
     description:
-      "We prioritize use cases by ROI and risk, and shape a roadmap your team and your board can get behind.",
+      "We rank the best ideas by return and risk, and lay out a simple plan you and your team can get behind.",
   },
   {
     no: "03",
     title: "Build",
     description:
-      "We ship production-grade automations and AI features with evaluation, monitoring, and guardrails baked in.",
+      "We build and launch your solution with safety checks and monitoring built in from day one.",
   },
   {
     no: "04",
-    title: "Scale",
+    title: "Grow",
     description:
-      "We measure impact, expand what works, and hand over a system your team can own and grow with confidence.",
+      "We measure the results, expand what works, and hand you something your team can run and grow on their own.",
   },
 ];
 
@@ -506,31 +499,31 @@ export const processSteps = [
 export const testimonials = [
   {
     quote:
-      "StayClever didn't sell us hype. They found three workflows costing us a fortune and automated them in a month. The ROI was obvious by week six.",
+      "StayClever didn't sell us hype. They found three tasks that were quietly costing us a fortune and automated them in a month. By week six, the payoff was obvious.",
     name: "Maya Chen",
     role: "Founder & CEO",
-    company: "Lumen Goods",
+    company: "D2C skincare brand",
   },
   {
     quote:
-      "The fraud model paid for the entire engagement in the first quarter. What impressed me most was how carefully they handled false positives.",
+      "The fraud system paid for the whole project in the first quarter. What impressed me most was how carefully they avoided blocking real customers.",
     name: "David Osei",
     role: "Head of Risk",
-    company: "Northwind Pay",
+    company: "US fintech startup",
   },
   {
     quote:
-      "They understood healthcare constraints from day one. Compliant, careful, and genuinely fast. Our staff actually trusts the system.",
+      "They understood our world from day one — careful, compliant, and genuinely fast. Our staff actually trust the system.",
     name: "Dr. Priya Nair",
     role: "Operations Director",
-    company: "Carewell Clinics",
+    company: "Healthcare network",
   },
   {
     quote:
       "We'd been burned by AI vendors before. StayClever shipped something real, measured it honestly, and handed it over cleanly.",
     name: "Tomás Rivera",
     role: "VP Engineering",
-    company: "Vertex SaaS",
+    company: "B2B software company",
   },
 ];
 
@@ -558,60 +551,60 @@ export const insightCategories = [
 export const insights: Insight[] = [
   {
     slug: "ai-roi-before-you-build",
-    title: "How to model AI ROI before you write a single line of code",
+    title: "How to know if an AI project is worth it — before you build",
     category: "AI Strategy",
     excerpt:
-      "A practical framework for sizing the business case of an AI initiative — so you fund the right ones and kill the rest early.",
+      "A simple way to size up the value of an AI idea, so you back the right ones and drop the rest early.",
     readTime: "8 min read",
     date: "May 18, 2026",
     author: "StayClever Team",
   },
   {
     slug: "automation-that-survives-scale",
-    title: "Building workflow automation that survives 10x scale",
+    title: "How to automate your work so it still holds up when you grow",
     category: "Automation",
     excerpt:
-      "The architecture decisions that separate automations that break under load from ones that quietly compound value.",
+      "The choices that decide whether your automation breaks under pressure or quietly saves you more every month.",
     readTime: "6 min read",
     date: "May 9, 2026",
     author: "StayClever Team",
   },
   {
     slug: "agents-vs-copilots",
-    title: "Agents vs. copilots: when autonomy actually earns its keep",
+    title: "Do you need an AI that acts, or one that just suggests?",
     category: "AI Agents",
     excerpt:
-      "Not every task needs an autonomous agent. Here's the decision tree we use with clients to choose the right level of autonomy.",
+      "Not every task needs a fully automated assistant. Here's a simple way to choose the right level of help.",
     readTime: "7 min read",
     date: "April 28, 2026",
     author: "StayClever Team",
   },
   {
     slug: "d2c-ai-playbook",
-    title: "The D2C AI playbook: retention beats acquisition",
+    title: "The D2C guide to AI: why keeping customers beats chasing new ones",
     category: "Industry Trends",
     excerpt:
-      "Where AI creates the highest-leverage wins for consumer brands — and the metrics that actually move the P&L.",
+      "Where AI gives consumer brands the biggest wins — and the numbers that actually move your bottom line.",
     readTime: "9 min read",
     date: "April 14, 2026",
     author: "StayClever Team",
   },
   {
     slug: "fraud-scoring-case",
-    title: "Inside a 70% fraud reduction: what made the model work",
+    title: "Inside a 70% drop in fraud: what made it work",
     category: "Case Studies",
     excerpt:
-      "A behind-the-scenes look at the data, features, and guardrails behind one of our highest-impact FinTech projects.",
+      "A behind-the-scenes look at the data and safeguards behind one of our most impactful projects.",
     readTime: "10 min read",
     date: "March 30, 2026",
     author: "StayClever Team",
   },
   {
     slug: "data-readiness-checklist",
-    title: "The data readiness checklist every AI project needs",
+    title: "Is your data ready for AI? Run this checklist first",
     category: "AI Strategy",
     excerpt:
-      "Before you train anything, run this checklist. It's the difference between a demo and a system you can trust.",
+      "Before you build anything, run this quick check. It's the difference between a flashy demo and something you can trust.",
     readTime: "5 min read",
     date: "March 16, 2026",
     author: "StayClever Team",
@@ -625,31 +618,31 @@ export const values = [
   {
     title: "Outcomes over hype",
     description:
-      "We measure success in business metrics — revenue, cost, time — not in model benchmarks or buzzwords.",
+      "We measure success in things you care about — money saved, time back, revenue up — not technical jargon or buzzwords.",
   },
   {
     title: "Pragmatic, not flashy",
     description:
-      "We ship the smallest thing that creates value, then compound it. No science projects, no vendor lock-in.",
+      "We build the smallest thing that creates real value, then grow it. No science experiments, no vendor lock-in.",
   },
   {
     title: "Safety by default",
     description:
-      "Guardrails, human-in-the-loop, and observability come standard. Especially in regulated industries.",
+      "Safety checks, human oversight, and clear records come standard — especially in regulated industries.",
   },
   {
     title: "You own the outcome",
     description:
-      "We hand over clean systems, clear documentation, and the knowledge to run them. No permanent dependency.",
+      "We hand over clean, documented systems and show your team how to run them. You're never stuck depending on us.",
   },
 ];
 
 export const timeline = [
-  { year: "2021", title: "The thesis", text: "Founded on a simple belief: most businesses don't need more AI hype — they need fewer manual hours." },
-  { year: "2022", title: "First automations", text: "Shipped early workflow automations for SMBs, proving ROI in weeks rather than quarters." },
-  { year: "2023", title: "Going deeper", text: "Expanded into predictive analytics and custom AI as clients trusted us with harder problems." },
-  { year: "2024", title: "Agents arrive", text: "Built our first production AI agents, moving from suggestions to completed work." },
-  { year: "2026", title: "50+ projects", text: "Now partnering with startups, SMBs, and D2C brands across eight industries worldwide." },
+  { year: "2021", title: "The idea", text: "Started with one belief: most businesses don't need more AI hype — they need fewer wasted hours." },
+  { year: "2022", title: "First wins", text: "Built our first automations for small businesses, proving real returns in weeks, not quarters." },
+  { year: "2023", title: "Going deeper", text: "Took on harder problems — forecasting and custom AI — as clients trusted us with more." },
+  { year: "2024", title: "AI that acts", text: "Built our first AI assistants that complete real work, not just suggest it." },
+  { year: "2026", title: "50+ projects", text: "Now working with startups, small businesses, and D2C brands across eight industries worldwide." },
 ];
 
 export const team = [

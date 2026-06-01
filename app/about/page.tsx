@@ -11,9 +11,9 @@ import FinalCTA from "@/components/sections/FinalCTA";
 import { Compass, Eye } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About — Practical AI Without the Jargon",
   description:
-    "StayClever is an AI consulting and automation studio built on a simple belief: businesses need fewer manual hours, not more AI hype.",
+    "StayClever is an AI consulting and automation studio built on a simple belief: businesses need fewer wasted hours, not more AI hype. Meet the team behind the results.",
 };
 
 export default function AboutPage() {
@@ -23,7 +23,7 @@ export default function AboutPage() {
         eyebrow="About us"
         ghost="STORY"
         titleLines={["We're the team", "behind the results"]}
-        intro="StayClever is an AI consulting and automation studio. We exist to turn AI from a buzzword into a line item that improves your P&L."
+        intro="StayClever is an AI consulting and automation studio. We turn AI from a buzzword into real, measurable results for your business — less wasted time, lower costs, and steady growth."
       >
         <MagneticButton href={site.cta.secondary.href} variant="primary" showArrow={false}>
           {site.cta.secondary.label}
@@ -46,19 +46,19 @@ export default function AboutPage() {
             <div className="mt-6 space-y-5 text-lg leading-relaxed text-ink/80">
               <p>
                 We started StayClever after watching too many businesses buy AI
-                they couldn&apos;t use — impressive demos that never touched a real
-                workflow or moved a real number.
+                they couldn&apos;t actually use — slick demos that never touched real
+                work or moved a real number.
               </p>
               <p>
-                So we built the opposite kind of firm. We start with your
-                operations, find the work that&apos;s quietly costing you, and remove
-                it with the smallest amount of AI that does the job. Then we
-                measure, and we compound.
+                So we built the opposite kind of company. We start with how your
+                business runs, find the work that&apos;s quietly costing you, and
+                remove it with the smallest amount of AI that does the job. Then
+                we measure it, and build on what works.
               </p>
               <p>
-                Today we partner with startups, SMBs, and D2C brands across eight
-                industries — and we still judge ourselves on one thing: the
-                results we can put numbers to.
+                Today we work with startups, small businesses, and D2C brands
+                across eight industries — and we still judge ourselves on one
+                thing: results we can put numbers to.
               </p>
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function AboutPage() {
               {
                 Icon: Compass,
                 label: "Mission",
-                text: "Help startups, SMBs, and D2C brands leverage AI to automate workflows, improve efficiency, reduce costs, and scale operations — practically and measurably.",
+                text: "Help startups, small businesses, and D2C brands use AI to automate work, save time, cut costs, and grow — practically, and in ways you can measure.",
               },
               {
                 Icon: Eye,

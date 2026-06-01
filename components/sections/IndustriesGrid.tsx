@@ -22,7 +22,7 @@ export default function IndustriesGrid() {
               Built for <span className="italic text-accent">modern businesses</span>
             </>
           }
-          intro="We bring sector-specific judgment to every engagement — because the best AI use case in retail is rarely the right one in healthcare."
+          intro="We know what works in your industry — because the best AI idea for a retail shop is rarely the right one for a clinic."
         />
 
         <Stagger className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">

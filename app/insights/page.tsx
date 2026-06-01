@@ -4,9 +4,9 @@ import InsightsList from "@/components/sections/InsightsList";
 import FinalCTA from "@/components/sections/FinalCTA";
 
 export const metadata: Metadata = {
-  title: "Insights",
+  title: "Insights — Practical AI Ideas You Can Use",
   description:
-    "Practical perspectives on applied AI — strategy, automation, agents, industry trends, and case studies you can use this quarter.",
+    "Clear, jargon-free advice on using AI in your business — strategy, automation, chatbots, and real case studies you can act on this quarter.",
 };
 
 export default function InsightsPage() {
@@ -15,8 +15,8 @@ export default function InsightsPage() {
       <PageHero
         eyebrow="Insights"
         ghost="IDEAS"
-        titleLines={["Practical thinking", "on applied AI"]}
-        intro="No futurism. No hype cycles. Just perspectives you can act on in the next quarter."
+        titleLines={["Practical AI ideas", "you can use"]}
+        intro="No futurism. No hype. Just clear, practical ideas you can put to work this quarter."
       />
       <InsightsList />
       <FinalCTA />
