@@ -705,7 +705,7 @@ export const timeline = [
   { year: "2022", title: "First wins", text: "Built our first automations for small businesses, proving real returns in weeks, not quarters." },
   { year: "2023", title: "Going deeper", text: "Took on harder problems — forecasting and custom AI — as clients trusted us with more." },
   { year: "2024", title: "AI that acts", text: "Built our first AI assistants that complete real work, not just suggest it." },
-  { year: "2026", title: "50+ projects", text: "Now working with startups, small businesses, and D2C brands across eight industries worldwide." },
+  { year: "2026", title: "Growing strong", text: "Now working with startups, small businesses, and D2C brands across eight industries worldwide." },
 ];
 
 export const team = [

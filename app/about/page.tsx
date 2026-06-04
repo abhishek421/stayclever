@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { values, timeline, team, stats } from "@/lib/data";
+import { values, timeline } from "@/lib/data";
 import { site } from "@/lib/site";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
-import Counter from "@/components/ui/Counter";
 import MagneticButton from "@/components/ui/MagneticButton";
 import Collaboration from "@/components/illustrations/Collaboration";
 import FinalCTA from "@/components/sections/FinalCTA";
@@ -22,7 +21,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About us"
         ghost="STORY"
-        titleLines={["We're the team", "behind the results"]}
+        titleLines={["Built for results,", "not hype"]}
         intro="StayClever is an AI consulting and automation studio. We turn AI from a buzzword into real, measurable results for your business — less wasted time, lower costs, and steady growth."
       >
         <MagneticButton href={site.cta.primary.href} variant="primary">
@@ -131,7 +130,7 @@ export default function AboutPage() {
         <div className="container-shell">
           <SectionHeading
             eyebrow="The journey"
-            title={<>From thesis to <span className="italic text-accent">50+ projects</span></>}
+            title={<>From belief to <span className="italic text-accent">proof</span></>}
           />
           <div className="relative mt-16">
             <div className="absolute left-[7px] top-2 h-full w-px bg-paper-line lg:left-1/2" />
@@ -157,63 +156,6 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Stats band */}
-      <section className="bg-ink py-16 text-white">
-        <div className="container-shell">
-          <Stagger className="grid grid-cols-2 gap-8 lg:grid-cols-4">
-            {stats.map((s) => (
-              <StaggerItem key={s.label} className="text-center">
-                <div className="font-display text-5xl font-bold tracking-tight lg:text-6xl">
-                  {s.display ? (
-                    s.display
-                  ) : (
-                    <>
-                      {s.note && (
-                        <span className="mr-1.5 align-middle font-sans text-xl font-medium text-white/55">
-                          {s.note}
-                        </span>
-                      )}
-                      <Counter to={s.value!} suffix={s.suffix} />
-                    </>
-                  )}
-                </div>
-                <p className="mt-2 text-sm text-white/60">{s.label}</p>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="bg-paper py-20 sm:py-28">
-        <div className="container-shell">
-          <SectionHeading
-            align="center"
-            eyebrow="The people"
-            title={<>A small team that <span className="italic text-accent">ships</span></>}
-            intro="Senior practitioners, not a layer of account managers. The people you meet are the people who do the work."
-          />
-          <Stagger className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {team.map((m) => (
-              <StaggerItem key={m.name}>
-                <div className="group overflow-hidden rounded-3xl border border-paper-line bg-white shadow-card">
-                  <div className="relative flex h-56 items-center justify-center overflow-hidden bg-accent-wash">
-                    <div className="absolute inset-0 opacity-40 blueprint-grid" />
-                    <span className="grain relative flex h-24 w-24 items-center justify-center rounded-full border border-accent/20 bg-white font-display text-3xl font-bold text-accent">
-                      {m.name.split(" ").map((w) => w[0]).join("").slice(0, 2)}
-                    </span>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-display text-lg font-bold text-ink">{m.name}</h3>
-                    <p className="mt-1 text-sm text-ink-muted">{m.role}</p>
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </Stagger>
         </div>
       </section>
 
