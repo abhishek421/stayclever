@@ -3,20 +3,13 @@ import { site } from "@/lib/site";
 import { Reveal } from "@/components/ui/Reveal";
 import TextReveal from "@/components/ui/TextReveal";
 import ContactForm from "@/components/sections/ContactForm";
-import { Mail, MapPin, Phone, Gauge, Check } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact — Get Your Free AI Plan",
+  title: "Contact — Book Your Free Call",
   description:
-    "Tell us about the task, cost, or growth challenge on your mind, and we'll send back a free AI plan — a clear, honest view of what's worth doing and what it's worth.",
+    "Tell us about the task, cost, or growth challenge on your mind, and book a free call — a clear, honest view of what's worth doing and what it's worth.",
 };
-
-const assessment = [
-  "Where AI can save you the most time or money",
-  "A short, ranked list of ideas to start with",
-  "An honest read on whether your data is ready",
-  "Simple guidance on what to build vs. buy",
-];
 
 export default function ContactPage() {
   return (
@@ -52,42 +45,8 @@ export default function ContactPage() {
             <ContactForm />
           </div>
 
-          {/* assessment teaser + details */}
+          {/* contact details */}
           <div className="space-y-6 lg:col-span-5">
-            <div className="relative overflow-hidden rounded-4xl border border-paper-line bg-ink p-8 text-white shadow-soft sm:p-10">
-              <div className="pointer-events-none absolute inset-0 opacity-[0.07] blueprint-grid" />
-              <div className="relative">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-accent-soft">
-                  <Gauge className="h-5 w-5" strokeWidth={1.8} />
-                </span>
-                <h2 className="mt-6 font-display text-2xl font-bold">
-                  Your Free AI Plan
-                </h2>
-                <p className="mt-3 text-sm leading-relaxed text-white/65">
-                  Every conversation starts with a free, no-pressure plan.
-                  You&apos;ll come away knowing:
-                </p>
-                <ul className="mt-6 space-y-3">
-                  {assessment.map((a) => (
-                    <li key={a} className="flex items-start gap-3 text-sm text-white/90">
-                      <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent text-white">
-                        <Check className="h-3 w-3" strokeWidth={3} />
-                      </span>
-                      {a}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8 flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                  <span className="font-display text-3xl font-bold text-accent-soft">
-                    48h
-                  </span>
-                  <span className="text-sm text-white/70">
-                    typical turnaround from first call to your AI plan
-                  </span>
-                </div>
-              </div>
-            </div>
-
             <div className="rounded-4xl border border-paper-line bg-white p-8 shadow-card">
               <h3 className="font-display text-lg font-bold text-ink">Other ways to reach us</h3>
               <ul className="mt-5 space-y-4 text-sm">

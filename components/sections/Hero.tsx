@@ -52,19 +52,6 @@ export default function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Left: copy */}
           <div className="lg:col-span-6">
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease }}
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-paper-line bg-white/70 px-4 py-1.5 text-xs font-medium text-ink-muted backdrop-blur-sm"
-            >
-              <span className="relative flex h-2 w-2 items-center justify-center">
-                <span className="absolute h-2 w-2 animate-ping rounded-full bg-accent/40" />
-                <span className="h-2 w-2 rounded-full bg-accent" />
-              </span>
-              AI consulting &amp; automation studio
-            </motion.div>
-
             {/* H1 is fully visible at first paint (LCP-safe): a single block with
                 a subtle opacity/translate entrance — never clipped out of view. */}
             <motion.h1
@@ -102,25 +89,6 @@ export default function Hero() {
               </MagneticButton>
             </motion.div>
 
-            {/* Concrete, on-brand proof — no fake avatars or unsourced star
-                ratings. These numbers come straight from the site's stats. */}
-            <motion.dl
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-paper-line pt-6"
-            >
-              {proof.map((p) => (
-                <div key={p.label} className="flex flex-col">
-                  <dt className="font-display text-2xl font-bold leading-none text-ink">
-                    {p.value}
-                  </dt>
-                  <dd className="mt-1 text-xs uppercase tracking-[0.12em] text-ink-muted">
-                    {p.label}
-                  </dd>
-                </div>
-              ))}
-            </motion.dl>
           </div>
 
           {/* Right: hero image (replaces the robot + collaboration illustration).
@@ -190,14 +158,6 @@ export default function Hero() {
     </section>
   );
 }
-
-// Kept distinct from the "Who we are" stat block (50+ / 10x / 24-7 / 99%)
-// so the same numbers don't repeat within one scroll.
-const proof = [
-  { value: "8", label: "Industries served" },
-  { value: "2021", label: "Operating since" },
-  { value: "Global", label: "Remote-first team" },
-];
 
 const marquee = [
   "Build",

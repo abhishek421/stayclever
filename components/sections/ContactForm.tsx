@@ -42,7 +42,7 @@ export default function ContactForm() {
             </h3>
             <p className="mt-3 max-w-sm text-ink-muted">
               We&apos;ll review your details and reply within one business day to
-              set up your free AI plan.
+              set up your call.
             </p>
           </motion.div>
         ) : (
@@ -55,7 +55,7 @@ export default function ContactForm() {
           >
             <div className="mb-6">
               <h2 className="font-display text-xl font-bold text-ink">
-                Book your free AI plan
+                Book a call
               </h2>
               <p className="mt-1 text-sm text-ink-muted">
                 A few details and a real human will be in touch.
@@ -113,7 +113,7 @@ export default function ContactForm() {
                 </>
               ) : (
                 <>
-                  Get my free AI plan
+                  Book my call
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </>
               )}
