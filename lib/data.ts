@@ -2,7 +2,7 @@ import {
   Brain,
   Workflow,
   Bot,
-  LineChart,
+  Sparkles,
   Boxes,
   type LucideIcon,
 } from "lucide-react";
@@ -108,31 +108,31 @@ export const services: Service[] = [
     process: ["Learn your business", "Set the guardrails", "Add chat and voice channels", "Improve from real conversations"],
   },
   {
-    slug: "predictive-analytics",
+    slug: "recommendation-system",
     index: "04",
-    title: "Predictive Analytics",
-    icon: LineChart,
-    tagline: "See what's coming before it costs you.",
-    proof: "Spot churn & fraud early",
+    title: "Recommendation Systems",
+    icon: Sparkles,
+    tagline: "Show every customer what they're most likely to buy next.",
+    proof: "Bigger baskets, more repeat buys",
     description:
-      "We turn the data you already have into clear forecasts — what customers will do, what you'll sell, and what to watch out for — so you can plan ahead.",
+      "We build recommendation engines trained on your own catalog and customer behaviour — the 'recommended for you', 'frequently bought together', and 'you might also like' that quietly lift every order.",
     problem:
-      "Big decisions get made on gut feel because the useful information is buried in spreadsheets nobody has time to dig through.",
+      "In a big catalog, shoppers find the one thing they came for and leave — and generic 'related product' plugins push items nobody wants, so they earn almost nothing.",
     solution:
-      "We build simple forecasts and alerts for things like demand, customer loss, and unusual activity — and put them right inside the tools you already use.",
+      "We build a recommender on your own sales and browsing data that shows each shopper the right products across your site, app, and email — and keeps learning from what they click and buy.",
     benefits: [
-      "More accurate forecasts",
-      "Early warning on customers about to leave",
-      "Smarter stock and spending",
-      "Answers in your dashboard, not a slide deck",
+      "Bigger average order value",
+      "More repeat purchases",
+      "Less browsing, more buying",
+      "Learns from every click and order",
     ],
     useCases: [
-      "Forecast sales and demand",
-      "Predict which customers may leave",
-      "Catch fraud and unusual activity",
-      "Make smarter pricing decisions",
+      "'Recommended for you' on your storefront",
+      "'Frequently bought together' at checkout",
+      "Personalized product emails",
+      "Smarter search and category ranking",
     ],
-    process: ["Check your data", "Find the signals", "Build and test", "Put it to work"],
+    process: ["Learn your catalog and customers", "Train on your own data", "Roll out across site and email", "Tune from real results"],
   },
   {
     slug: "custom-ai-solutions",
@@ -252,6 +252,8 @@ export type Industry = {
   applications: Application[];
   outcome: string;
   caseStudySlug?: string;
+  /** Use when an industry has more than one case study to link. */
+  caseStudies?: { slug: string; label: string }[];
 };
 
 export const industries: Industry[] = [
@@ -266,7 +268,7 @@ export const industries: Industry[] = [
       { title: "Creative testing", detail: "Create and test ad and email ideas faster to find what actually sells." },
     ],
     outcome: "45% increase in repeat orders",
-    caseStudySlug: "d2c-orders-lift",
+    caseStudySlug: "d2c-recommendation-engine",
   },
   {
     slug: "retail",
@@ -279,6 +281,7 @@ export const industries: Industry[] = [
       { title: "Smarter pricing", detail: "Use demand and competitor signals to set better prices." },
     ],
     outcome: "30% lower stockouts",
+    caseStudySlug: "retail-ai-roadmap",
   },
   {
     slug: "fintech",
@@ -291,7 +294,6 @@ export const industries: Industry[] = [
       { title: "Support copilots", detail: "Help your team reply accurately and stay compliant." },
     ],
     outcome: "70% reduction in fraud losses",
-    caseStudySlug: "fintech-fraud-reduction",
   },
   {
     slug: "healthcare",
@@ -304,7 +306,6 @@ export const industries: Industry[] = [
       { title: "Triage routing", detail: "Send each case to the right team automatically." },
     ],
     outcome: "80% faster patient response",
-    caseStudySlug: "healthcare-support-speed",
   },
   {
     slug: "saas",
@@ -317,6 +318,7 @@ export const industries: Industry[] = [
       { title: "Onboarding automation", detail: "Guide new users to their first win automatically." },
     ],
     outcome: "2x activation rate",
+    caseStudySlug: "saas-crm-rag-copilot",
   },
   {
     slug: "logistics",
@@ -343,16 +345,20 @@ export const industries: Industry[] = [
     outcome: "3x qualified leads",
   },
   {
-    slug: "professional-services",
-    name: "Professional Services",
-    blurb: "Automate research, drafting, and admin so you bill more of the hours you work.",
+    slug: "service-businesses",
+    name: "Service Businesses",
+    blurb: "From firms that bill by the hour to local shops that run on appointments — automate the busywork and the bookings.",
     applications: [
-      { title: "Research agents", detail: "Gather and summarize information so your time goes to the thinking." },
-      { title: "Drafting assistants", detail: "Produce first drafts of memos, proposals, and reports." },
-      { title: "Knowledge search", detail: "Find answers across your firm's documents in seconds." },
-      { title: "Billing automation", detail: "Capture time and build invoices with less lost revenue." },
+      { title: "Research & drafting agents", detail: "Produce first drafts of memos, proposals, and reports so your time goes to the thinking." },
+      { title: "Document & billing automation", detail: "Pull data from invoices and statements and capture time, with less lost revenue." },
+      { title: "WhatsApp & chat booking", detail: "Let customers book, reschedule, and ask questions on the channels they already use." },
+      { title: "Reminders & slot back-fill", detail: "Cut no-shows with timely reminders, and offer freed-up slots to the next customer." },
     ],
     outcome: "20+ hours saved per week",
+    caseStudies: [
+      { slug: "professional-services-automation", label: "20+ hrs saved / week — CA firm" },
+      { slug: "barbershop-whatsapp-booking", label: "35% fewer no-shows — barbershop" },
+    ],
   },
 ];
 
@@ -363,6 +369,7 @@ export type CaseStudy = {
   slug: string;
   client: string;
   industry: string;
+  service: { slug: string; title: string };
   headline: string;
   summary: string;
   metric: { value: string; label: string; direction: "up" | "down" };
@@ -374,74 +381,130 @@ export type CaseStudy = {
 };
 
 export const caseStudies: CaseStudy[] = [
+  /* 01 — AI Strategy & Planning × Retail */
   {
-    slug: "d2c-orders-lift",
-    client: "D2C skincare brand",
+    slug: "retail-ai-roadmap",
+    client: "Regional grocery distributor (Rajasthan, India)",
+    industry: "Retail",
+    service: { slug: "ai-strategy-consulting", title: "AI Strategy & Planning" },
+    headline: "A 12-month AI roadmap that turned guesswork into a ranked plan",
+    summary:
+      "A grocery distributor supplying hundreds of kirana stores across Rajasthan knew AI could help but couldn't say where to start. We mapped how the business actually runs, scored where AI would pay off, and shipped the top win: demand forecasting that cut stockouts.",
+    metric: { value: "30%", label: "Fewer stockouts", direction: "down" },
+    kpis: [
+      { value: "3 wks", label: "Kickoff to plan" },
+      { value: "11", label: "Initiatives ranked by ROI" },
+      { value: "-30%", label: "Stockouts (first win)" },
+      { value: "9 mo", label: "Payback on phase one" },
+    ],
+    challenge:
+      "Demand swung hard with festivals, weddings, and the harvest season, and fast-moving staples and perishables sold out at some retailers while spoiling in other warehouses. Leadership knew AI could help, but the budget was stuck behind a single question — 'where do we even start?'",
+    approach:
+      "Over three weeks we walked their distribution centres and reviewed the sales and stock-movement data they already had, scored every opportunity on value versus effort, and built a 12-month plan with a return estimate for each move.",
+    implementation:
+      "We sequenced the roadmap into phases and started with the highest-value, lowest-risk win — a regional demand forecast wired into their existing inventory system, so each warehouse sees exactly what to stock and reroute ahead of festival and seasonal spikes instead of guessing.",
+    results:
+      "Leadership finally had one ranked list everyone agreed on. The first initiative cut stockouts 30% across the network and paid for itself in nine months — funding the next phase out of its own savings.",
+  },
+  /* 02 — Workflow Automation & AI Agents × Professional Services */
+  {
+    slug: "professional-services-automation",
+    client: "Chartered accountancy firm (Jaipur, India)",
+    industry: "Service Businesses",
+    service: { slug: "workflow-automation", title: "Workflow Automation & AI Agents" },
+    headline: "20+ hours a week back per accountant — without hiring anyone",
+    summary:
+      "Bank statements, receipts, and timesheets all ran on manual data entry across disconnected tools. We automated the predictable steps and added AI agents for the judgment work, so the firm bills more of the hours it actually works — especially through filing season.",
+    metric: { value: "20+", label: "Hours saved / week", direction: "up" },
+    kpis: [
+      { value: "20+ hrs", label: "Saved per accountant / week" },
+      { value: "3x", label: "Faster document processing" },
+      { value: "-90%", label: "Lost billable time" },
+      { value: "5 wks", label: "Time to launch" },
+    ],
+    challenge:
+      "Accountants spent their highest-value hours keying in receipts, reconciling statements, and reconstructing timesheets — work that didn't bill but quietly ate the day, and turned every GST and audit deadline into overtime.",
+    approach:
+      "We mapped where time leaked between their accounting and document tools, automated the predictable steps — data extraction, reconciliations, time capture — and built AI agents for the parts that genuinely need a professional's judgment.",
+    implementation:
+      "A document agent pulls figures from invoices, receipts, and bank statements into their books, a drafting assistant produces first-pass tax computations and audit notes for review, and a billing agent captures time as work happens — all connected to the tools they already use, with an accountant signing off on every output.",
+    results:
+      "Each accountant got back more than 20 hours a week, document processing ran three times faster, and almost none of their billable time slipped through the cracks — the firm absorbed filing-season load without a single new hire.",
+  },
+  /* 03 — AI Chat & Voice Assistants × Local Services (barbershops) */
+  {
+    slug: "barbershop-whatsapp-booking",
+    client: "Barbershop chain (Jaipur, India)",
+    industry: "Service Businesses",
+    service: { slug: "ai-chatbots-assistants", title: "AI Chat & Voice Assistants" },
+    headline: "A WhatsApp agent that books appointments and cut no-shows 35%",
+    summary:
+      "Bookings ran on phone calls and walk-ins, so calls during a haircut went unanswered and empty chairs piled up at peak hours. A WhatsApp assistant now books, reschedules, and reminds customers around the clock — without anyone at the front desk.",
+    metric: { value: "35%", label: "Fewer no-shows", direction: "down" },
+    kpis: [
+      { value: "24/7", label: "Bookings on WhatsApp" },
+      { value: "-35%", label: "No-shows" },
+      { value: "60%", label: "Bookings self-served" },
+      { value: "<30s", label: "Reply, any hour" },
+    ],
+    challenge:
+      "Calls during a haircut went straight to voicemail, evenings and Sundays were dead air, and forgotten appointments left chairs empty at the busiest hours — every missed booking was money walking past the door.",
+    approach:
+      "We met customers where they already are — on WhatsApp. We trained an assistant on each outlet's services, barbers, and timings, set clear rules for what it can confirm on its own, and connected it straight to the booking calendar.",
+    implementation:
+      "The assistant chats in Hindi or English over WhatsApp, books and reschedules into the right barber's calendar, sends a reminder the day before, and offers a freed-up slot to the next customer when someone cancels — passing anything unusual to the front desk.",
+    results:
+      "No-shows fell 35%, six in ten bookings now happen without a staff member lifting a finger, and the evening and Sunday enquiries that used to vanish turn into filled chairs.",
+  },
+  /* 04 — Recommendation Systems × D2C */
+  {
+    slug: "d2c-recommendation-engine",
+    client: "D2C fashion brand (India)",
     industry: "D2C",
-    headline: "45% more repeat orders for a fast-growing D2C brand",
+    service: { slug: "recommendation-system", title: "Recommendation Systems" },
+    headline: "A recommendation engine that lifted average order value 28%",
     summary:
-      "We added personalized product recommendations and an instant support assistant — and turned one-time buyers into loyal, repeat customers.",
-    metric: { value: "45%", label: "Repeat orders", direction: "up" },
+      "With a deep catalog, shoppers found one item and left. A recommendation engine trained on the brand's own sales and browsing data now surfaces the right products across site, app, and email — lifting basket size and repeat purchases.",
+    metric: { value: "28%", label: "Higher order value", direction: "up" },
     kpis: [
-      { value: "+45%", label: "Repeat orders" },
-      { value: "-38%", label: "Support tickets" },
-      { value: "6 wks", label: "Time to launch" },
-      { value: "4.7x", label: "Return in year one" },
+      { value: "+28%", label: "Average order value" },
+      { value: "+22%", label: "Repeat purchases" },
+      { value: "35%", label: "Revenue from recommendations" },
+      { value: "5 wks", label: "Time to launch" },
     ],
     challenge:
-      "The brand was great at winning new customers, but most never came back — and the support team couldn't keep up with the growth.",
+      "With hundreds of styles across the range, shoppers found the one item they came for and left. The generic 'related products' plugin pushed irrelevant items and rarely earned a second click.",
     approach:
-      "We looked at what happened after each purchase, found where customers dropped off, and focused on two fixes: better recommendations and instant support.",
+      "We trained a recommender on the brand's own data — what gets viewed together, what sells together, and what each customer keeps coming back for — instead of relying on off-the-shelf rules.",
     implementation:
-      "Personalized recommendations on the website and in email, plus a support assistant connected to their help desk and order system.",
+      "'Recommended for you' on the homepage, 'frequently bought together' at checkout, and personalized product emails — all powered by one engine that updates as customers click and buy, measured against a holdout group so every gain is real.",
     results:
-      "Repeat orders rose 45% in two quarters, support tickets fell 38%, and the project paid for itself nearly five times over in the first year.",
+      "Average order value rose 28%, repeat purchases climbed 22%, and recommendations now drive over a third of revenue — proven against a control group, not guessed.",
   },
+  /* 05 — Custom AI Solutions × SaaS (RAG copilot in a CRM product) */
   {
-    slug: "fintech-fraud-reduction",
-    client: "US fintech startup",
-    industry: "FinTech",
-    headline: "70% fewer fraud losses with real-time checks",
+    slug: "saas-crm-rag-copilot",
+    client: "B2B CRM software company",
+    industry: "SaaS",
+    service: { slug: "custom-ai-solutions", title: "Custom AI Solutions" },
+    headline: "A custom RAG copilot built into their CRM — 40% more daily active users",
     summary:
-      "A real-time scoring system flags risky transactions in milliseconds — cutting fraud without slowing down honest customers.",
-    metric: { value: "70%", label: "Fraud losses", direction: "down" },
+      "Their CRM held everything customers needed, but the answers were buried across accounts, notes, and tickets. We built a retrieval copilot into their product that answers in plain language from each customer's own data — and they own it outright.",
+    metric: { value: "40%", label: "More daily active users", direction: "up" },
     kpis: [
-      { value: "-70%", label: "Fraud losses" },
-      { value: "<80ms", label: "Decision speed" },
-      { value: "-22%", label: "False alarms" },
-      { value: "24/7", label: "Coverage" },
+      { value: "+40%", label: "Daily active users" },
+      { value: "-50%", label: "Support tickets" },
+      { value: "<2s", label: "Answer, with sources" },
+      { value: "100%", label: "On their own stack" },
     ],
     challenge:
-      "Their old rule-based checks were both too slow and too blunt — letting fraud through while blocking real customers.",
+      "New users churned before they found value, and 'how do I…' tickets piled up — yet off-the-shelf chatbots couldn't safely touch private, per-customer CRM data or keep one company's records from leaking into another's.",
     approach:
-      "We studied their transaction history to find the patterns that signal fraud, then built a system that scores every transaction instantly.",
+      "We agreed on one goal — make the product easier to get value from — then designed a retrieval system that answers using each customer's own CRM data, with strict isolation between tenants and citations on every answer.",
     implementation:
-      "A real-time scoring check built into the payment flow, with a review queue and feedback loop so the team keeps it sharp.",
+      "A RAG copilot built into their app: it retrieves from each customer's accounts, notes, and history, answers with cited sources, respects every permission rule, and runs on their own infrastructure. We shipped a working version first, hardened it for production, and handed it over as fully theirs.",
     results:
-      "Fraud losses dropped 70% and false alarms fell 22% — all while keeping checkout fast and smooth.",
-  },
-  {
-    slug: "healthcare-support-speed",
-    client: "Multi-clinic healthcare network",
-    industry: "Healthcare",
-    headline: "80% faster patient replies across a multi-clinic network",
-    summary:
-      "An intake and support assistant routes patients instantly and drafts replies for staff to approve.",
-    metric: { value: "80%", label: "Faster response", direction: "up" },
-    kpis: [
-      { value: "80%", label: "Faster response" },
-      { value: "-55%", label: "Admin time" },
-      { value: "12k", label: "Patients/month" },
-      { value: "HIPAA", label: "Compliant" },
-    ],
-    challenge:
-      "Front-desk teams were swamped, patients waited days for answers, and clinicians lost time to paperwork.",
-    approach:
-      "We mapped how patients get help, then designed an assistant with staff approving every message that reaches a patient.",
-    implementation:
-      "A triage and drafting assistant connected to their scheduling system, with strict safety rules and full record-keeping.",
-    results:
-      "Patient replies came 80% faster and admin time dropped 55%, giving staff more time for actual care.",
+      "Daily active users rose 40% as people got answers instead of digging, 'how do I' tickets fell by half, and the copilot became the feature their sales team now leads with — owned outright and running on their own stack.",
   },
 ];
 

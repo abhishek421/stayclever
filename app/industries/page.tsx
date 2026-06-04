@@ -11,7 +11,7 @@ import { Check, ArrowUpRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Industries We Help — AI for D2C, Retail, FinTech & More",
   description:
-    "Practical AI built for your industry — D2C, retail, FinTech, healthcare, SaaS, logistics, real estate, and professional services. The right use case for your business, not a generic one.",
+    "Practical AI built for your industry — D2C, retail, FinTech, healthcare, SaaS, logistics, real estate, and service businesses. The right use case for your business, not a generic one.",
 };
 
 export default function IndustriesPage() {
@@ -59,19 +59,33 @@ export default function IndustriesPage() {
                     <p className="lead mt-5 max-w-lg">{ind.blurb}</p>
                   </Reveal>
                   <Reveal delay={0.15}>
-                    {ind.caseStudySlug ? (
-                      <Link
-                        href={`/case-studies/${ind.caseStudySlug}`}
-                        className="group mt-7 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-accent shadow-card ring-1 ring-inset ring-accent/40 transition-colors duration-300 hover:bg-accent hover:text-white hover:ring-accent"
-                      >
-                        {outcomeContent}
-                        <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                      </Link>
-                    ) : (
-                      <div className="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-accent shadow-card ring-1 ring-inset ring-accent/40">
-                        {outcomeContent}
-                      </div>
-                    )}
+                    <div className="mt-7 flex flex-wrap gap-3">
+                      {ind.caseStudies ? (
+                        ind.caseStudies.map((cs) => (
+                          <Link
+                            key={cs.slug}
+                            href={`/case-studies/${cs.slug}`}
+                            className="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-accent shadow-card ring-1 ring-inset ring-accent/40 transition-colors duration-300 hover:bg-accent hover:text-white hover:ring-accent"
+                          >
+                            <span className="h-1.5 w-1.5 rounded-full bg-accent group-hover:bg-white" />
+                            {cs.label}
+                            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                          </Link>
+                        ))
+                      ) : ind.caseStudySlug ? (
+                        <Link
+                          href={`/case-studies/${ind.caseStudySlug}`}
+                          className="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-accent shadow-card ring-1 ring-inset ring-accent/40 transition-colors duration-300 hover:bg-accent hover:text-white hover:ring-accent"
+                        >
+                          {outcomeContent}
+                          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                        </Link>
+                      ) : (
+                        <div className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-accent shadow-card ring-1 ring-inset ring-accent/40">
+                          {outcomeContent}
+                        </div>
+                      )}
+                    </div>
                   </Reveal>
                 </div>
 

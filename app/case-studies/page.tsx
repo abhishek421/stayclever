@@ -33,11 +33,14 @@ export default function CaseStudiesPage() {
                 >
                   <div className="grid lg:grid-cols-12">
                     <div className="border-b border-paper-line p-8 sm:p-10 lg:col-span-7 lg:border-b-0 lg:border-r">
-                      <div className="flex items-center gap-3 text-xs">
+                      <div className="flex flex-wrap items-center gap-3 text-xs">
                         <span className="rounded-full bg-accent-wash px-3 py-1 font-semibold text-accent">
                           {cs.industry}
                         </span>
                         <span className="text-ink-muted">{cs.client}</span>
+                        <span className="hidden rounded-full border border-paper-line px-3 py-1 font-medium text-ink-muted sm:inline">
+                          {cs.service.title}
+                        </span>
                       </div>
                       <h2 className="display mt-6 text-2xl sm:text-3xl lg:text-4xl">
                         {cs.headline}

@@ -54,11 +54,17 @@ export default async function CaseStudyPage({
             <ArrowLeft className="h-4 w-4" /> All case studies
           </Link>
           <Reveal>
-            <div className="mt-8 flex items-center gap-3 text-xs">
+            <div className="mt-8 flex flex-wrap items-center gap-3 text-xs">
               <span className="rounded-full bg-accent-wash px-3 py-1 font-semibold text-accent">
                 {cs.industry}
               </span>
               <span className="text-ink-muted">{cs.client}</span>
+              <Link
+                href={`/services#${cs.service.slug}`}
+                className="rounded-full border border-paper-line px-3 py-1 font-medium text-ink-muted transition-colors hover:border-accent hover:text-accent"
+              >
+                Service: {cs.service.title}
+              </Link>
             </div>
           </Reveal>
           <Reveal delay={0.05}>

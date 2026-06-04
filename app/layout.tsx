@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "AI chatbot for business",
     "reduce manual work",
     "answer customers 24/7",
-    "predictive analytics",
+    "recommendation system",
     "AI agents",
     "D2C AI",
   ],
