@@ -1,9 +1,11 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { site } from "@/lib/site";
 import MagneticButton from "@/components/ui/MagneticButton";
+// Old illustration components — kept (commented out below) so we can revert easily.
 import Robot from "@/components/illustrations/Robot";
 import Collaboration from "@/components/illustrations/Collaboration";
 import FloatingIcons from "@/components/illustrations/FloatingIcons";
@@ -49,7 +51,7 @@ export default function Hero() {
       <div className="container-shell relative z-20">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Left: copy */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-6">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -98,11 +100,6 @@ export default function Hero() {
               <MagneticButton href={site.cta.primary.href} variant="primary">
                 {site.cta.primary.label}
               </MagneticButton>
-              {/* Differentiated secondary path — sends to proof, not the same
-                  destination as the primary CTA. */}
-              <MagneticButton href="/case-studies" variant="secondary">
-                See the results
-              </MagneticButton>
             </motion.div>
 
             {/* Concrete, on-brand proof — no fake avatars or unsourced star
@@ -126,12 +123,29 @@ export default function Hero() {
             </motion.dl>
           </div>
 
-          {/* Right: illustration stack — robot + collaboration card, fading and
-              parallaxing together as one unit on scroll. */}
+          {/* Right: hero image (replaces the robot + collaboration illustration).
+              Parallax + fade preserved via the wrapper. */}
           <motion.div
             style={{ y: yArt, opacity: fade }}
-            className="relative lg:col-span-5"
+            className="relative lg:col-span-6"
           >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.9, ease, delay: 0.25 }}
+              className="relative z-10 lg:w-[115%]"
+            >
+              <Image
+                src="/hero.png"
+                alt="StayClever — humans and AI working together"
+                width={1536}
+                height={1024}
+                priority
+                className="h-auto w-full rounded-4xl"
+              />
+            </motion.div>
+
+            {/* OLD ILLUSTRATION — kept for reference, swap back by uncommenting:
             <motion.div
               initial={{ opacity: 0, scale: 0.94 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -152,6 +166,7 @@ export default function Hero() {
                 humans + AI, working as one team
               </p>
             </motion.div>
+            */}
           </motion.div>
         </div>
       </div>
