@@ -2,9 +2,9 @@ export const site = {
   name: "StayClever",
   tagline: "Practical AI Consulting & Automation for Growing Businesses",
   description:
-    "StayClever helps startups, small businesses, and D2C brands use AI to automate everyday work, answer customers faster, cut costs, and grow — without the jargon. Start with a free AI plan.",
-  url: "https://stayclever.ai",
-  email: "hello@stayclever.ai",
+    "StayClever helps startups, small businesses, and D2C brands use AI to automate everyday work, answer customers faster, cut costs, and grow — without the jargon. Book a call to get started.",
+  url: "https://stayclever.in",
+  email: "hello@stayclever.in",
   phone: "+1 (415) 555-0142",
   location: "San Francisco · Remote-first",
   cta: {
