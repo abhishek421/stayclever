@@ -8,7 +8,7 @@ export const site = {
   phone: "+1 (415) 555-0142",
   location: "San Francisco · Remote-first",
   cta: {
-    primary: { label: "Get a Free AI Plan", href: "/contact" },
+    primary: { label: "Book your free call", href: "/contact" },
     secondary: { label: "Let's Talk", href: "/contact" },
   },
   nav: [

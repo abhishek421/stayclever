@@ -45,13 +45,6 @@ export default function FinalCTA() {
                   <MagneticButton href={site.cta.primary.href} variant="primary">
                     {site.cta.primary.label}
                   </MagneticButton>
-                  <MagneticButton
-                    href={site.cta.secondary.href}
-                    variant="secondary"
-                    showArrow={false}
-                  >
-                    {site.cta.secondary.label}
-                  </MagneticButton>
                 </div>
               </Reveal>
             </div>

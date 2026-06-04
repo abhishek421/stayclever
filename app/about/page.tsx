@@ -25,8 +25,8 @@ export default function AboutPage() {
         titleLines={["We're the team", "behind the results"]}
         intro="StayClever is an AI consulting and automation studio. We turn AI from a buzzword into real, measurable results for your business — less wasted time, lower costs, and steady growth."
       >
-        <MagneticButton href={site.cta.secondary.href} variant="primary" showArrow={false}>
-          {site.cta.secondary.label}
+        <MagneticButton href={site.cta.primary.href} variant="primary">
+          {site.cta.primary.label}
         </MagneticButton>
       </PageHero>
 
