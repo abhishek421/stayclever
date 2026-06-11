@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { insights, insightCategories } from "@/lib/data";
@@ -25,11 +26,15 @@ export default function InsightsList() {
             href={`/insights/${featured.slug}`}
             className="group mb-12 grid overflow-hidden rounded-4xl border border-paper-line bg-white shadow-card transition-shadow duration-500 hover:shadow-card-hover lg:grid-cols-2"
           >
-            <div className="relative flex min-h-[260px] items-center justify-center overflow-hidden bg-accent-wash">
-              <div className="absolute inset-0 opacity-50 blueprint-grid" />
-              <span className="relative px-8 text-center font-display text-3xl font-bold italic text-accent/70">
-                {featured.category}
-              </span>
+            <div className="relative min-h-[260px] overflow-hidden bg-accent-wash">
+              <Image
+                src={featured.image}
+                alt={featured.title}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
             </div>
             <div className="flex flex-col justify-center p-8 sm:p-12">
               <div className="flex items-center gap-3 text-xs text-ink-muted">
@@ -89,9 +94,15 @@ export default function InsightsList() {
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="group flex flex-col overflow-hidden rounded-3xl border border-paper-line bg-white shadow-card transition-shadow duration-500 hover:shadow-card-hover"
               >
-                <div className="relative flex h-40 items-center justify-center overflow-hidden border-b border-paper-line bg-accent-wash">
-                  <div className="absolute inset-0 opacity-50 blueprint-grid" />
-                  <span className="relative font-display text-xl font-bold italic text-accent/70">
+                <div className="relative h-44 overflow-hidden border-b border-paper-line bg-accent-wash">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <span className="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-xs font-semibold text-accent backdrop-blur">
                     {post.category}
                   </span>
                 </div>

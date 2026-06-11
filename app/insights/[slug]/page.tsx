@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { insights, type ContentBlock } from "@/lib/data";
@@ -34,11 +35,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: site.name,
       publishedTime: new Date(post.date).toISOString(),
       authors: [post.author],
+      images: [{ url: post.image, width: 1600, height: 900, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description,
+      images: [post.image],
     },
   };
 }
@@ -88,6 +91,7 @@ export default async function InsightArticlePage({ params }: Props) {
     "@type": "BlogPosting",
     headline: post.title,
     description: post.metaDescription ?? post.excerpt,
+    image: `${site.url}${post.image}`,
     datePublished: new Date(post.date).toISOString(),
     author: { "@type": "Organization", name: post.author },
     publisher: {
@@ -147,6 +151,19 @@ export default async function InsightArticlePage({ params }: Props) {
           </h1>
           <p className="lead mt-6">{post.excerpt}</p>
         </div>
+
+        <div className="container-shell relative mx-auto mt-12 max-w-4xl">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-4xl border border-paper-line bg-accent-wash shadow-card">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 56rem"
+              className="object-cover"
+            />
+          </div>
+        </div>
       </header>
 
       {/* Body */}
@@ -182,9 +199,15 @@ export default async function InsightArticlePage({ params }: Props) {
                 href={`/insights/${p.slug}`}
                 className="group flex flex-col overflow-hidden rounded-3xl border border-paper-line bg-white shadow-card transition-shadow duration-500 hover:shadow-card-hover"
               >
-                <div className="relative flex h-32 items-center justify-center overflow-hidden border-b border-paper-line bg-accent-wash">
-                  <div className="absolute inset-0 opacity-50 blueprint-grid" />
-                  <span className="relative font-display text-lg font-bold italic text-accent/70">
+                <div className="relative h-36 overflow-hidden border-b border-paper-line bg-accent-wash">
+                  <Image
+                    src={p.image}
+                    alt={p.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 20rem"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <span className="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-xs font-semibold text-accent backdrop-blur">
                     {p.category}
                   </span>
                 </div>

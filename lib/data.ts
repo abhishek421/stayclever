@@ -607,6 +607,8 @@ export type Insight = {
   readTime: string;
   date: string;
   author: string;
+  /** Cover image path under /public, e.g. /insights/<slug>.jpg */
+  image: string;
   /** SEO meta description; falls back to excerpt when omitted. */
   metaDescription?: string;
   keywords?: string[];
@@ -631,6 +633,7 @@ export const insights: Insight[] = [
     readTime: "8 min read",
     date: "May 18, 2026",
     author: "StayClever Team",
+    image: "/insights/ai-roi-before-you-build.png",
     metaDescription:
       "A practical framework to estimate the ROI of an AI project before you spend a rupee building it — so you back the right ideas and drop the rest early.",
     keywords: ["AI ROI", "AI strategy", "AI business case", "is AI worth it", "AI project planning"],
@@ -718,6 +721,7 @@ export const insights: Insight[] = [
     readTime: "6 min read",
     date: "May 9, 2026",
     author: "StayClever Team",
+    image: "/insights/automation-that-survives-scale.png",
     metaDescription:
       "The design choices that decide whether your business automation breaks under growth or quietly saves you more every month. A practical guide for scaling teams.",
     keywords: ["business automation", "workflow automation", "scaling automation", "automation best practices"],
@@ -797,6 +801,7 @@ export const insights: Insight[] = [
     readTime: "7 min read",
     date: "April 28, 2026",
     author: "StayClever Team",
+    image: "/insights/agents-vs-copilots.png",
     metaDescription:
       "AI agents that act vs. copilots that suggest — a clear framework for choosing the right level of automation for each task in your business.",
     keywords: ["AI agents", "AI copilot", "agentic AI", "AI automation levels", "human in the loop"],
@@ -882,6 +887,7 @@ export const insights: Insight[] = [
     readTime: "9 min read",
     date: "April 14, 2026",
     author: "StayClever Team",
+    image: "/insights/d2c-ai-playbook.png",
     metaDescription:
       "Where AI gives D2C and consumer brands the biggest wins — retention, support, and the metrics that actually move your bottom line, not vanity numbers.",
     keywords: ["D2C AI", "ecommerce AI", "customer retention", "AI for consumer brands", "reduce churn"],
@@ -963,6 +969,7 @@ export const insights: Insight[] = [
     readTime: "10 min read",
     date: "March 30, 2026",
     author: "StayClever Team",
+    image: "/insights/fraud-scoring-case.png",
     metaDescription:
       "A behind-the-scenes case study of how a fraud-scoring system cut fraud losses by 70% — the data, the safeguards, and the design choices that made it work.",
     keywords: ["fraud detection", "AI fraud scoring", "machine learning case study", "reduce fraud losses"],
@@ -1042,6 +1049,7 @@ export const insights: Insight[] = [
     readTime: "5 min read",
     date: "March 16, 2026",
     author: "StayClever Team",
+    image: "/insights/data-readiness-checklist.png",
     metaDescription:
       "A quick, practical checklist to know whether your data is actually ready for AI — before you spend on a project that a flashy demo can't save.",
     keywords: ["data readiness", "AI data quality", "data for machine learning", "AI checklist"],

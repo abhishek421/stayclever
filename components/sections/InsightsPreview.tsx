@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { insights } from "@/lib/data";
@@ -40,10 +41,16 @@ export default function InsightsPreview() {
                   transition={{ type: "spring", stiffness: 280, damping: 22 }}
                   className="flex h-full flex-col overflow-hidden rounded-3xl border border-paper-line bg-white shadow-card transition-shadow duration-500 group-hover:shadow-card-hover"
                 >
-                  {/* sketch cover */}
-                  <div className="relative flex h-44 items-center justify-center overflow-hidden border-b border-paper-line bg-accent-wash">
-                    <div className="absolute inset-0 opacity-50 blueprint-grid" />
-                    <span className="relative font-display text-2xl font-bold italic text-accent/70">
+                  {/* cover */}
+                  <div className="relative h-44 overflow-hidden border-b border-paper-line bg-accent-wash">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <span className="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-xs font-semibold text-accent backdrop-blur">
                       {post.category}
                     </span>
                   </div>
