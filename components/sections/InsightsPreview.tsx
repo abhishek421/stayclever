@@ -34,7 +34,7 @@ export default function InsightsPreview() {
         <Stagger className="mt-16 grid gap-5 lg:grid-cols-3">
           {items.map((post) => (
             <StaggerItem key={post.slug}>
-              <Link href={`/insights#${post.slug}`} className="group block h-full">
+              <Link href={`/insights/${post.slug}`} className="group block h-full">
                 <motion.article
                   whileHover={{ y: -6 }}
                   transition={{ type: "spring", stiffness: 280, damping: 22 }}

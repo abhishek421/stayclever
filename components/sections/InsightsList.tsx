@@ -1,9 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { insights, insightCategories } from "@/lib/data";
 import { ArrowUpRight } from "lucide-react";
+
+const MotionLink = motion.create(Link);
 
 export default function InsightsList() {
   const [active, setActive] = useState<string>("All");
@@ -18,8 +21,8 @@ export default function InsightsList() {
       <div className="container-shell">
         {/* featured */}
         {active === "All" && (
-          <a
-            href={`#${featured.slug}`}
+          <Link
+            href={`/insights/${featured.slug}`}
             className="group mb-12 grid overflow-hidden rounded-4xl border border-paper-line bg-white shadow-card transition-shadow duration-500 hover:shadow-card-hover lg:grid-cols-2"
           >
             <div className="relative flex min-h-[260px] items-center justify-center overflow-hidden bg-accent-wash">
@@ -46,7 +49,7 @@ export default function InsightsList() {
                 <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </span>
             </div>
-          </a>
+          </Link>
         )}
 
         {/* filter tabs */}
@@ -75,11 +78,11 @@ export default function InsightsList() {
         <motion.div layout className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {(active === "All" ? rest : filtered).map((post) => (
-              <motion.a
+              <MotionLink
                 layout
                 key={post.slug}
                 id={post.slug}
-                href="#"
+                href={`/insights/${post.slug}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.97 }}
@@ -109,7 +112,7 @@ export default function InsightsList() {
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </span>
                 </div>
-              </motion.a>
+              </MotionLink>
             ))}
           </AnimatePresence>
         </motion.div>

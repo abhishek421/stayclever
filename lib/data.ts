@@ -593,6 +593,12 @@ export const testimonials = [
 /* ----------------------------------------------------------------
    INSIGHTS
 ----------------------------------------------------------------- */
+export type ContentBlock =
+  | { type: "p"; text: string }
+  | { type: "h2"; text: string }
+  | { type: "ul"; items: string[] }
+  | { type: "quote"; text: string };
+
 export type Insight = {
   slug: string;
   title: string;
@@ -601,6 +607,10 @@ export type Insight = {
   readTime: string;
   date: string;
   author: string;
+  /** SEO meta description; falls back to excerpt when omitted. */
+  metaDescription?: string;
+  keywords?: string[];
+  body: ContentBlock[];
 };
 
 export const insightCategories = [
@@ -621,6 +631,83 @@ export const insights: Insight[] = [
     readTime: "8 min read",
     date: "May 18, 2026",
     author: "StayClever Team",
+    metaDescription:
+      "A practical framework to estimate the ROI of an AI project before you spend a rupee building it — so you back the right ideas and drop the rest early.",
+    keywords: ["AI ROI", "AI strategy", "AI business case", "is AI worth it", "AI project planning"],
+    body: [
+      {
+        type: "p",
+        text: "Most failed AI projects don't fail in the build. They fail in the decision to build at all. The idea sounded exciting, a vendor demo looked slick, and nobody stopped to ask the boring question: if this works perfectly, what does it actually save or earn us?",
+      },
+      {
+        type: "p",
+        text: "You can answer that question in an afternoon — long before you write a line of code or sign a contract. Here's the way we size up an AI idea with our clients, so the ones we back tend to pay for themselves.",
+      },
+      {
+        type: "h2",
+        text: "Start with the work, not the technology",
+      },
+      {
+        type: "p",
+        text: "Forget the word \"AI\" for a moment. Find one specific, repetitive task that costs you real money today. Customer emails that take three hours a day to answer. Invoices someone keys in by hand. Orders flagged for fraud one by one. AI is only worth it when it removes a cost you can already point to.",
+      },
+      {
+        type: "p",
+        text: "If you can't name the task and roughly what it costs, that's your answer for now: it's too early to build.",
+      },
+      {
+        type: "h2",
+        text: "Put a number on the prize",
+      },
+      {
+        type: "p",
+        text: "Estimate the annual value of solving it. You don't need a spreadsheet model — a back-of-the-envelope number is enough to make a decision. Multiply hours saved per week by a loaded hourly cost, or take the revenue you lose to the problem today.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Time saved: hours per week × weeks per year × cost per hour.",
+          "Money recovered: errors, fraud, churn, or missed sales the system would prevent.",
+          "Speed gained: faster replies or decisions that win deals you currently lose.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Be honest and a little conservative. If the prize is small even when you're optimistic, stop here — you've just saved yourself months.",
+      },
+      {
+        type: "h2",
+        text: "Estimate the real cost — including the boring parts",
+      },
+      {
+        type: "p",
+        text: "The build is rarely the expensive part. The cost that surprises people is everything around it: cleaning up data, connecting to the tools you already use, training the team, and keeping the thing running after launch. A useful rule of thumb is that ongoing care costs as much again over a year as the initial build.",
+      },
+      {
+        type: "quote",
+        text: "If a project only makes sense when you ignore the cost of running it, it doesn't make sense.",
+      },
+      {
+        type: "h2",
+        text: "Look for a payback inside a year",
+      },
+      {
+        type: "p",
+        text: "Divide the cost by the annual value. If the project pays for itself in under a year, it's usually worth a serious look. One to two years, only if it also unlocks something strategic. Longer than that, and you're betting on a future that may not arrive — drop it and find a better idea.",
+      },
+      {
+        type: "h2",
+        text: "Then de-risk it with the smallest possible test",
+      },
+      {
+        type: "p",
+        text: "Even a great-looking idea can hide a fatal flaw — messy data, a workflow that won't budge, a team that won't adopt it. So before the full build, run the cheapest test that could prove the idea wrong. A few weeks, a narrow slice of the work, real data. If it survives that, you build with confidence. If it doesn't, you've lost weeks instead of quarters.",
+      },
+      {
+        type: "p",
+        text: "That's the whole discipline: name the task, price the prize, price the work honestly, demand a fast payback, and prove it small before you build big. Do that, and the projects you green-light will be the ones worth finishing.",
+      },
+    ],
   },
   {
     slug: "automation-that-survives-scale",
@@ -631,6 +718,75 @@ export const insights: Insight[] = [
     readTime: "6 min read",
     date: "May 9, 2026",
     author: "StayClever Team",
+    metaDescription:
+      "The design choices that decide whether your business automation breaks under growth or quietly saves you more every month. A practical guide for scaling teams.",
+    keywords: ["business automation", "workflow automation", "scaling automation", "automation best practices"],
+    body: [
+      {
+        type: "p",
+        text: "There's a specific kind of pain that hits growing businesses. The automation that saved you ten hours a week at fifty orders a day starts silently dropping things at five hundred. Nobody notices until a customer does. The fix usually isn't more automation — it's automation built to survive growth in the first place.",
+      },
+      {
+        type: "h2",
+        text: "Why automations break when you grow",
+      },
+      {
+        type: "p",
+        text: "Most quick automations are built for the happy path — the version where every input is clean and nothing goes wrong. That works beautifully at low volume, because a human is quietly catching the exceptions you never see. Scale up, and the exceptions scale too. Suddenly there are too many for anyone to catch, and they slip through as silent failures.",
+      },
+      {
+        type: "p",
+        text: "The difference between automation that breaks and automation that holds isn't how clever it is. It's how it handles the messy edges.",
+      },
+      {
+        type: "h2",
+        text: "Design for the messy 20%, not the clean 80%",
+      },
+      {
+        type: "p",
+        text: "Before you automate a task, spend an hour listing everything that can go wrong with it. The duplicate order. The customer who replies in a different language. The payment that half-completes. These edge cases are where automation earns its keep — or quietly fails.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Decide what happens to anything the system can't handle — it should land in a clear queue, never vanish.",
+          "Make every automated action reversible or logged, so a mistake can be found and undone.",
+          "Set a threshold above which a human is asked to confirm, instead of letting the machine guess.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Make failures loud, not silent",
+      },
+      {
+        type: "p",
+        text: "The most dangerous automation is the one that fails without telling anyone. Build in a simple alert when something doesn't complete, a daily count of what was processed versus what was skipped, and a place where stuck items wait for a human. You want to learn about a problem from a dashboard, not from an angry customer.",
+      },
+      {
+        type: "quote",
+        text: "Good automation doesn't just do the work. It tells you when it couldn't.",
+      },
+      {
+        type: "h2",
+        text: "Keep humans in the loop where it matters",
+      },
+      {
+        type: "p",
+        text: "Full automation is the right goal for low-risk, high-volume work. But for decisions with real consequences — refunds above a limit, anything touching a regulated process, messages that go out under your brand — keep a person in the loop. The system does the heavy lifting and proposes the action; the human approves it in one click. You get most of the speed with almost none of the risk.",
+      },
+      {
+        type: "h2",
+        text: "Build it to be handed over",
+      },
+      {
+        type: "p",
+        text: "An automation only one person understands is a liability waiting to happen. Document what it does in plain language, name an owner, and make sure someone other than the builder can pause it, fix it, or explain it. The automations that survive scale are the ones your team owns — not the ones they're afraid to touch.",
+      },
+      {
+        type: "p",
+        text: "Get these foundations right and automation stops being something you babysit. It becomes infrastructure — quietly saving you more every month as you grow, instead of more to worry about.",
+      },
+    ],
   },
   {
     slug: "agents-vs-copilots",
@@ -641,6 +797,81 @@ export const insights: Insight[] = [
     readTime: "7 min read",
     date: "April 28, 2026",
     author: "StayClever Team",
+    metaDescription:
+      "AI agents that act vs. copilots that suggest — a clear framework for choosing the right level of automation for each task in your business.",
+    keywords: ["AI agents", "AI copilot", "agentic AI", "AI automation levels", "human in the loop"],
+    body: [
+      {
+        type: "p",
+        text: "There's a lot of noise right now about AI agents — systems that don't just answer questions but go off and do the work. It's genuinely powerful. It's also not always what you need. The trick is matching the level of help to the task, instead of reaching for the most autonomous option because it sounds impressive.",
+      },
+      {
+        type: "h2",
+        text: "Two different kinds of help",
+      },
+      {
+        type: "p",
+        text: "A copilot suggests. It drafts the email, summarizes the document, recommends the next step — and a human decides whether to use it. An agent acts. It takes a goal, makes its own decisions, and completes the task end to end: it doesn't just draft the reply, it sends it; it doesn't just flag the order, it processes the refund.",
+      },
+      {
+        type: "p",
+        text: "Both are useful. They're just suited to very different situations.",
+      },
+      {
+        type: "h2",
+        text: "When a copilot is the right call",
+      },
+      {
+        type: "ul",
+        items: [
+          "The work needs judgment, taste, or context the AI can't fully see.",
+          "Mistakes are expensive, public, or hard to undo.",
+          "Your team is still building trust in the system.",
+          "The task happens often enough to matter, but each instance is a little different.",
+        ],
+      },
+      {
+        type: "p",
+        text: "A copilot keeps a human in control while removing the slow part — the blank page, the first draft, the research. For most knowledge work, this is where the biggest, safest wins are.",
+      },
+      {
+        type: "h2",
+        text: "When an agent earns its keep",
+      },
+      {
+        type: "ul",
+        items: [
+          "The task is high-volume and repetitive — too much for a person to keep up with.",
+          "The rules are clear enough that a wrong decision is rare and recoverable.",
+          "Speed matters more than nuance — replies that must go out in seconds, around the clock.",
+          "You can give the agent clear limits and a clean way to escalate what it can't handle.",
+        ],
+      },
+      {
+        type: "quote",
+        text: "Give an agent the work that's too repetitive for a human and too risky to leave undone. Give a copilot everything that needs a human's judgment.",
+      },
+      {
+        type: "h2",
+        text: "The safe way to go from one to the other",
+      },
+      {
+        type: "p",
+        text: "You don't have to choose once and forever. The smart path is to start a task as a copilot and graduate it to an agent only after it earns trust. Let the system suggest for a few weeks while a human approves each action. Watch how often it's right. As confidence grows, hand it more autonomy on the easy cases and keep humans on the hard ones.",
+      },
+      {
+        type: "p",
+        text: "That's how you get the speed of automation without betting the business on it. The level of help isn't a fixed setting — it's a dial you turn up as the evidence comes in.",
+      },
+      {
+        type: "h2",
+        text: "The question to actually ask",
+      },
+      {
+        type: "p",
+        text: "Don't ask \"should we use an AI agent?\" Ask, for each task: what does a mistake here cost, and how often will it happen? When the answer is \"a lot\" or \"often,\" keep a human in the loop. When it's \"little\" and \"rarely,\" let the machine run. Get that match right and the technology almost takes care of itself.",
+      },
+    ],
   },
   {
     slug: "d2c-ai-playbook",
@@ -651,6 +882,77 @@ export const insights: Insight[] = [
     readTime: "9 min read",
     date: "April 14, 2026",
     author: "StayClever Team",
+    metaDescription:
+      "Where AI gives D2C and consumer brands the biggest wins — retention, support, and the metrics that actually move your bottom line, not vanity numbers.",
+    keywords: ["D2C AI", "ecommerce AI", "customer retention", "AI for consumer brands", "reduce churn"],
+    body: [
+      {
+        type: "p",
+        text: "Most D2C brands spend their AI budget on the wrong end of the funnel. They pour it into ads and acquisition — chasing the next customer — when the cheaper, more durable win is keeping the ones they already have. Acquisition costs keep climbing. Retention is where AI quietly compounds.",
+      },
+      {
+        type: "h2",
+        text: "Why retention is the better bet",
+      },
+      {
+        type: "p",
+        text: "A returning customer costs you almost nothing to reach, buys more often, and tells their friends. A small lift in repeat purchase rate flows almost straight to profit, because you've already paid to acquire them. AI is unusually good at exactly the work that drives retention — noticing who's about to drift away, and making the right offer at the right moment.",
+      },
+      {
+        type: "quote",
+        text: "It's far cheaper to keep a customer than to win a new one — and that's precisely the work AI does well.",
+      },
+      {
+        type: "h2",
+        text: "The four highest-value places to start",
+      },
+      {
+        type: "p",
+        text: "You don't need a grand AI strategy. You need a few well-chosen wins that pay for themselves and build trust for the next step.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Spot churn before it happens: flag customers whose behavior says they're slipping, and win them back while it's still cheap.",
+          "Answer support instantly: handle the repetitive questions — where's my order, how do I return this — around the clock, and free your team for the ones that need a human.",
+          "Personalize what each customer sees: recommend the next product based on what they actually buy, not a generic bestseller list.",
+          "Forecast demand: predict what sells when, so you're not stuck with dead stock or sold out of your hero product.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "The numbers that actually matter",
+      },
+      {
+        type: "p",
+        text: "It's easy to get distracted by vanity metrics. Tie every AI project to a number that moves the bottom line:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Repeat purchase rate — the clearest signal that retention is working.",
+          "Customer lifetime value — what a customer is worth over the whole relationship.",
+          "Cost to serve — how much support each order costs you.",
+          "Inventory turns — how efficiently your stock turns into cash.",
+        ],
+      },
+      {
+        type: "p",
+        text: "If an AI project can't be tied to one of these, be suspicious of it.",
+      },
+      {
+        type: "h2",
+        text: "Start small, prove it, then expand",
+      },
+      {
+        type: "p",
+        text: "Pick the one of these where you feel the most pain right now. Run it on a slice of your customers, measure the lift against a group you left alone, and only scale what clearly works. A brand that nails churn-spotting and instant support will out-earn one that sprinkled AI across ten half-finished experiments.",
+      },
+      {
+        type: "p",
+        text: "The brands that win the next few years won't be the ones that spent the most on acquisition. They'll be the ones that used AI to make every customer they already have worth more.",
+      },
+    ],
   },
   {
     slug: "fraud-scoring-case",
@@ -661,6 +963,75 @@ export const insights: Insight[] = [
     readTime: "10 min read",
     date: "March 30, 2026",
     author: "StayClever Team",
+    metaDescription:
+      "A behind-the-scenes case study of how a fraud-scoring system cut fraud losses by 70% — the data, the safeguards, and the design choices that made it work.",
+    keywords: ["fraud detection", "AI fraud scoring", "machine learning case study", "reduce fraud losses"],
+    body: [
+      {
+        type: "p",
+        text: "One of our most impactful projects cut a client's fraud losses by roughly 70% in a few months. It's tempting to tell that story as \"we added AI.\" The truth is more useful: the model was the easy part. What made it work was the design around it — the data, the safeguards, and the decision to keep humans in control.",
+      },
+      {
+        type: "h2",
+        text: "The problem",
+      },
+      {
+        type: "p",
+        text: "The client was reviewing suspicious transactions by hand. It was slow, it was inconsistent, and it didn't scale — as volume grew, more fraud slipped through simply because the team couldn't keep up. They didn't need a fancier model. They needed a way to catch more of the bad while bothering fewer of the good.",
+      },
+      {
+        type: "h2",
+        text: "Why we started with the data, not the algorithm",
+      },
+      {
+        type: "p",
+        text: "The single biggest lever wasn't the choice of model — it was getting the history clean and honest. We pulled together past transactions, carefully labelled which had turned out to be fraud, and made sure that label was accurate. A model is only as good as the examples it learns from, and most of the early work was unglamorous data cleanup.",
+      },
+      {
+        type: "quote",
+        text: "The model was a few weeks of work. Getting the data right was most of the project — and most of the result.",
+      },
+      {
+        type: "h2",
+        text: "Scoring, not blocking",
+      },
+      {
+        type: "p",
+        text: "We deliberately didn't build a system that blocks transactions on its own. Instead it gives each one a risk score and a short, plain-language reason. That choice mattered:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Low-risk transactions pass straight through, so good customers aren't punished.",
+          "High-risk ones go to a human reviewer with the reasons already laid out, so the review is fast.",
+          "The grey zone in the middle gets a lighter check instead of an outright block.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The team's time went where it mattered most, and legitimate customers stopped getting caught in the net.",
+      },
+      {
+        type: "h2",
+        text: "The safeguards that kept it honest",
+      },
+      {
+        type: "p",
+        text: "A fraud model that can't explain itself is dangerous. We built in a few non-negotiables: every score came with its reasons, every decision was logged, and a human made the final call on anything serious. We also watched for the model quietly getting worse as fraud patterns shifted, so it could be retrained before accuracy slipped.",
+      },
+      {
+        type: "h2",
+        text: "Why it actually stuck",
+      },
+      {
+        type: "p",
+        text: "Plenty of fraud models get built and then ignored because nobody trusts them. This one stuck because the reviewers trusted it — they could see why it flagged something, override it when it was wrong, and watch it get better over time. Trust, not accuracy alone, is what turned a good model into a 70% result.",
+      },
+      {
+        type: "p",
+        text: "The lesson travels well beyond fraud. The win came from clean data, a system that assists rather than overrules, and safeguards that let people trust it. Get those right and the AI does the rest.",
+      },
+    ],
   },
   {
     slug: "data-readiness-checklist",
@@ -671,6 +1042,67 @@ export const insights: Insight[] = [
     readTime: "5 min read",
     date: "March 16, 2026",
     author: "StayClever Team",
+    metaDescription:
+      "A quick, practical checklist to know whether your data is actually ready for AI — before you spend on a project that a flashy demo can't save.",
+    keywords: ["data readiness", "AI data quality", "data for machine learning", "AI checklist"],
+    body: [
+      {
+        type: "p",
+        text: "Almost every AI project that disappoints has the same root cause, and it isn't the model. It's the data. The demo looked great on a clean sample, then fell apart on the real thing. You can avoid most of that pain by running a five-minute check before you build anything.",
+      },
+      {
+        type: "h2",
+        text: "Do you have the data at all?",
+      },
+      {
+        type: "p",
+        text: "AI learns from examples. If the information you'd need to make the decision isn't being recorded anywhere — or lives only in someone's head — there's nothing to learn from yet. The first question isn't \"is our data good?\" It's \"do we even capture it?\" If the answer is no, your first project is to start collecting it.",
+      },
+      {
+        type: "h2",
+        text: "Is it accurate and consistent?",
+      },
+      {
+        type: "ul",
+        items: [
+          "Does the same thing get recorded the same way every time, or does every person enter it differently?",
+          "Are there obvious errors — impossible dates, duplicate records, empty fields where it matters?",
+          "Can you trust what's there, or does everyone quietly know parts of it are wrong?",
+        ],
+      },
+      {
+        type: "p",
+        text: "A model trained on messy data learns the mess. Garbage in, confident garbage out.",
+      },
+      {
+        type: "h2",
+        text: "Is it enough — and does it reflect reality?",
+      },
+      {
+        type: "p",
+        text: "You need a fair number of examples, and they need to look like the real world the system will face. A few dozen records won't teach a model much. And if your history only covers your easy cases, the system will be blindsided by the hard ones. The data should include the messy, the rare, and the awkward — not just the clean wins.",
+      },
+      {
+        type: "quote",
+        text: "The goal isn't perfect data. It's data that's honest about the world the AI has to work in.",
+      },
+      {
+        type: "h2",
+        text: "Can you actually get to it?",
+      },
+      {
+        type: "p",
+        text: "Data trapped in a system nobody can export from, or scattered across ten spreadsheets and three tools, is data you can't use yet. Before you build, make sure the information can be reached, joined together, and refreshed — otherwise you'll have a model that worked once and can't be kept alive.",
+      },
+      {
+        type: "h2",
+        text: "What to do if you fail the checklist",
+      },
+      {
+        type: "p",
+        text: "Failing isn't a reason to give up on AI — it's a cheaper, earlier project. Start capturing the missing data, clean up the worst of the mess, and connect the sources. That groundwork pays off for far more than the one project, and it's the difference between a demo that impresses and a system you can actually trust.",
+      },
+    ],
   },
 ];
 

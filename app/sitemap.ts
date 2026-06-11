@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
-import { caseStudies } from "@/lib/data";
+import { caseStudies, insights } from "@/lib/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", "/services", "/industries", "/case-studies", "/about", "/insights", "/contact"];
@@ -16,5 +16,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
-  return [...base, ...cs];
+  const posts = insights.map((p) => ({
+    url: `${site.url}/insights/${p.slug}`,
+    lastModified: new Date(p.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+  return [...base, ...cs, ...posts];
 }
